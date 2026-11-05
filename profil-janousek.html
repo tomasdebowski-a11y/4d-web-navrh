@@ -1,0 +1,250 @@
+<!DOCTYPE html><html lang="cs"><head><meta name="robots" content="noindex, nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>4D Fyzioterapie – David Janoušek</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:Inter,system-ui,sans-serif;color:#2A2F3A;background:#FBF7F0}
+a{color:#1F3F8F}a:hover{color:#C8102E}
+h1,h2,h3{font-family:Fraunces, Georgia, serif;font-weight:400}
+</style>
+<style>
+@media (max-width: 760px){
+  h1{margin-top:26px !important}
+  .tl-row > div:has(> img){order:2}
+  div:has(> div > #tm-q){padding:26px 22px !important;gap:20px !important;border-radius:26px !important}
+  #tm-q{font-size:22px !important}
+  .person span > a{white-space:nowrap}
+  .person span:has(> a){flex-wrap:wrap !important;row-gap:6px !important}
+  .person > div{min-width:0 !important}
+  header > div{padding:14px 18px !important}
+  header nav{gap:0 !important}
+  header nav a:not(:last-child){display:none !important}
+  header img{height:38px !important}
+  section > div, section{padding-left:20px !important;padding-right:20px !important}
+  section{padding-top:56px !important;padding-bottom:56px !important}
+  section > div{padding-top:0 !important;padding-bottom:0 !important}
+  h1{font-size:44px !important;line-height:1.06 !important}
+  h2{font-size:34px !important}
+  [style*="grid-template-columns"]{grid-template-columns:1fr !important}
+  [style*="flex: 1 1"]{flex-basis:100% !important}
+  .tl-row{flex-direction:column !important;align-items:flex-start !important;gap:14px !important}
+  .tl-row > div{text-align:left !important;align-items:flex-start !important;width:100%}
+  .tl-row > div:nth-child(2){display:none !important}
+  .tl-row img{margin-left:0 !important;max-width:100% !important;height:200px !important}
+  .tl-line,.tl-end{display:none !important}
+  .ring{width:300px !important;height:300px !important;margin:0 auto}
+  .ring img{width:300px !important;height:300px !important}
+  .ring-s{width:220px !important;height:220px !important}
+  .ring-s img{width:220px !important;height:220px !important}
+  .tm-line{flex-wrap:nowrap !important;overflow-x:auto;justify-content:flex-start !important;gap:22px !important;padding-bottom:8px}
+  .tm-line > span{display:none}
+  .tm-line > a{flex:0 0 auto}
+  .person{gap:18px !important}
+  .person > a:first-child{width:88px !important;height:88px !important}
+  .person > a:first-child img{width:88px !important;height:88px !important}
+  [style*="font-size: 84px"]{font-size:44px !important}
+  [style*="font-size: 64px"],[style*="font-size: 68px"]{font-size:44px !important}
+  .vals.vals{grid-template-columns:1fr 1fr !important;gap:22px 18px !important;margin-top:8px !important}
+  .vals > div{gap:6px !important}
+  .vals > div > span:first-child{width:30px !important;height:30px !important}
+  .vals > div > span:nth-child(2){font-size:18px !important}
+  .vals > div > span:nth-child(3){font-size:14px !important;line-height:1.4 !important}
+  .kt-img,.grp-q{display:none !important}
+  .car.car{display:flex !important;flex-direction:row !important;flex-wrap:nowrap !important;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px !important;margin-left:-20px !important;margin-right:-20px !important;padding:4px 20px 6px !important;scroll-padding-left:20px;scrollbar-width:none;position:relative}
+  .car::-webkit-scrollbar{display:none}
+  .car.car > *{flex:0 0 84% !important;scroll-snap-align:start;min-width:0;box-sizing:border-box}
+  .tl-sec.car{max-width:none !important;margin-left:0 !important;margin-right:0 !important;padding-top:8px !important;padding-bottom:6px !important}
+  .tl-sec .tl-row{background:#FFFFFF;border-radius:26px;padding:0 0 22px !important;overflow:hidden;gap:12px !important}
+  .tl-sec .tl-row > div{padding:0 20px;box-sizing:border-box}
+  .tl-sec .tl-row > div:has(> img){order:-1 !important;padding:0 !important}
+  .tl-sec .tl-row img{height:190px !important;border-radius:0 !important;width:100% !important;max-width:none !important}
+  .tl-sec .tl-row h2,.tl-sec .tl-row h3{font-size:26px !important}
+  .grp{background:#FFFFFF;border-radius:26px;padding:22px 20px !important;gap:16px !important}
+  .grp .ring-s{width:150px !important;height:150px !important;margin-left:0 !important}
+  .grp .ring-s img{width:150px !important;height:150px !important}
+  .grp span[style*="font-size: 36px"]{font-size:28px !important}
+  section:has(> div > .car){padding-left:0 !important;padding-right:0 !important}
+  section:has(> div > .car) > div{padding-left:20px !important;padding-right:20px !important}
+  .hl-row blockquote{font-size:21px !important;line-height:1.4 !important}
+  .hl-row figure{background:#FFFFFF;border-radius:22px;padding:22px 20px}
+  .car-dots{display:flex !important;justify-content:center;gap:8px;margin-top:14px}
+  .hero-s{gap:0 !important;padding-top:20px !important;overflow:clip;position:relative}
+  .hero-s .ring{order:-1;width:190px !important;height:190px !important;margin:0 -60px -96px auto !important}
+  .hero-s .ring img{width:190px !important;height:190px !important}
+  .hero-s nav{display:none !important}
+  .hero-s h1{font-size:34px !important;margin-top:0 !important;max-width:205px}
+  .hero-s > div{position:relative;z-index:1}
+  .steps > div{background:#FBF7F0;border-radius:24px;padding:22px 20px}
+  .tabs-s{gap:22px !important}
+  .tabs-s > div:not(.on):not(.tab-sw){display:none !important}
+  .tabs-s > div > h2,.tabs-s > div > span:first-child{display:none !important}
+  .tab-sw{display:flex !important}
+  .cv.cv{display:flex !important;flex-direction:column;gap:22px !important;padding-left:46px !important}
+  .cv > span{left:14px !important;right:auto !important;top:14px !important;bottom:14px !important;width:2px !important;height:auto !important;background:linear-gradient(180deg,rgba(200,16,46,.2),rgba(200,16,46,.6),rgba(31,63,143,.7)) !important}
+  .cv li{gap:2px !important}
+  .cv li > span:first-child{position:absolute !important;left:-46px;top:0;width:30px !important;height:30px !important}
+  .kurzy:not(.open) .k2{display:none !important}
+  .k-more{display:inline-flex !important}
+  .kurzy.open + .k-more{display:none !important}
+  .pohled{background:#FBF7F0;border-radius:26px;padding:0 0 22px;overflow:hidden;gap:10px !important}
+  .pohled > *:not(img){margin-left:20px !important;margin-right:20px !important}
+  .pohled img{height:190px !important;border-radius:0 !important}
+  .pohled h3{font-size:26px !important}
+  .fig{gap:24px !important}
+  .fig h3{font-size:27px !important}
+  .fig img[style*="height: 420px"]{height:300px !important}
+  .stats{padding:26px 22px !important;gap:24px !important}
+  .price{padding:28px 22px !important}
+  .price h3{font-size:24px !important}
+  details summary{font-size:19px !important}
+  .figs{gap:22px !important}
+  .pill{font-size:14px !important;padding:8px 14px !important}
+  .stats > div{flex:1 1 40% !important}
+  .stats span[style*="font-size: 56px"]{font-size:34px !important;gap:6px !important}
+  .flt-row{flex-wrap:nowrap !important;overflow-x:auto;scrollbar-width:none;padding-bottom:24px !important}
+  .story[style*="padding: 56px"]{padding:26px 20px !important;border-radius:26px !important}
+  .story{gap:24px !important}
+  .story h2{font-size:30px !important}
+  .t-big{font-size:52px !important}
+  .story blockquote{font-size:21px !important}
+  .study > div:first-child{height:220px !important;padding:10px !important;border-radius:22px !important}
+  .study span[style*="font-size: 52px"]{font-size:40px !important}
+  .hstats{gap:16px 28px !important}
+  .hstats span[style*="font-size: 40px"]{font-size:30px !important}
+  .stories{gap:44px !important}
+  .story .car figure{padding:24px 20px !important}
+  .pr-row{padding:30px 0 !important;gap:18px !important}
+  .pr-row > div:first-child{gap:14px !important}
+  .pr-dot{width:28px !important;height:28px !important}
+  .pr-row h2{font-size:26px !important}
+  .pr-row span[style*="font-size: 30px"]{font-size:24px !important}
+  .k-main{grid-template-columns:1fr 1fr !important;gap:14px 18px !important;font-size:15px !important}
+  .k-list{grid-template-columns:1fr !important}
+  .k-list span{font-size:18px !important}
+  .also{margin-top:48px !important;padding-top:32px !important;gap:20px !important}
+  .also h3{font-size:28px !important}
+  .also-row{justify-content:flex-start !important;overflow-x:auto;scrollbar-width:none;margin:0 -20px;padding:14px 20px 8px 46px !important}
+  .also-row::-webkit-scrollbar{display:none}
+  .also-i{width:138px !important;margin-left:-20px !important}
+  .also-c{width:138px !important;height:138px !important;padding:5px !important}
+  .also-t{font-size:17px !important}
+  .also-d{font-size:12.5px !important;max-width:118px !important}
+  .hero-u{padding-top:96px !important}
+  .hero-u h1{font-size:42px !important;max-width:none !important}
+  .hero-u > div{padding-left:0 !important;padding-right:0 !important}
+  .hero-u{gap:24px !important}
+  .hero-u .hero-vals{position:relative;z-index:1}
+  .v-note{padding:12px 20px 0 !important}
+  .hero-u p[style*="font-size: 28px"]{font-size:21px !important}
+  .hero-lg .lg{width:250px !important;margin:0 auto}
+  .hero-lg .eyebrow{font-size:11.5px !important;letter-spacing:.08em !important}
+  .m-cta{display:flex !important}
+  .m-note{bottom:84px !important}
+  body{padding-bottom:76px}
+}
+.car-dots{display:none}
+.tab-sw,.k-more{display:none}
+.tab-sw{gap:4px;background:#F3EBDD;border-radius:999px;padding:5px}
+.tab-sw button{flex:1;border:0;background:transparent;padding:12px 8px;border-radius:999px;font:600 15px Inter,sans-serif;color:#1B2B4B;cursor:pointer}
+.tab-sw button.on{background:#FFFFFF;box-shadow:0 2px 8px rgba(27,43,75,.1)}
+.k-more{align-self:flex-start;margin-top:4px;border:1.5px solid #D9CFBF;background:#FFFFFF;border-radius:999px;padding:12px 20px;font:600 15px Inter,sans-serif;color:#1B2B4B;cursor:pointer}
+.car-dots button{width:8px;height:8px;border-radius:50%;border:0;padding:0;background:#D9CFBF;transition:all .2s}
+.car-dots button.on{width:22px;border-radius:4px;background:#C8102E}
+.m-cta{display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:12px 16px 16px;background:#FFFFFF;border-top:1px solid #E6DDCD;box-shadow:0 -6px 18px rgba(27,43,75,.08)}
+.m-cta a{flex:1;display:flex;align-items:center;justify-content:center;min-height:50px;background:#C8102E;color:#fff;text-decoration:none;font:600 17px Inter,sans-serif;border-radius:999px}
+</style></head><body>
+
+<div style="width: 100%; background: #FBF7F0">
+<header><div style="max-width: 1280px; margin: 0 auto; padding: 22px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap">
+<a href="index.html" style="display: flex"><img src="img/95823f2a-logo-4d-na-sirku-barevne.svg" alt="4D Fyzioterapie" style="height: 46px; width: auto; display: block"></a>
+<nav aria-label="Hlavní menu" style="display: flex; gap: 26px; font-size: 15px; align-items: center; flex-wrap: wrap"><a href="index.html" style="color: #2A2F3A; text-decoration: none">Úvod</a><a href="deti.html" style="color: #2A2F3A; text-decoration: none">Komu pomáháme</a><a href="tym.html" style="color: #C8102E; text-decoration: none">Kdo jsme</a><a href="diagnostika.html" style="color: #2A2F3A; text-decoration: none">Diagnostika</a><a href="pribehy.html" style="color: #2A2F3A; text-decoration: none">Příběhy</a><a href="cenik.html" style="color: #2A2F3A; text-decoration: none">Ceník</a><a href="kontakt.html" style="color: #2A2F3A; text-decoration: none">Kontakt</a>
+<a href="#objednat" style="background: #C8102E; color: #FFFFFF; text-decoration: none; font-weight: 600; padding: 11px 20px; border-radius: 999px">Objednat se</a></nav></div></header>
+<section class="hero-s" style="max-width: 1280px; margin: 0 auto; padding: 40px 32px 88px; display: flex; flex-wrap: wrap; gap: 64px; align-items: center">
+<span class="ring" style="position: relative; width: 380px; height: 380px; display: block; flex: 0 0 auto">
+<span aria-hidden="true" style="position: absolute; inset: 0; border-radius: 50%; border: 2px solid #C8102E; transform: translateX(36px); opacity: 0.2"></span>
+<span aria-hidden="true" style="position: absolute; inset: 0; border-radius: 50%; border: 2px solid #C8102E; transform: translateX(18px); opacity: 0.45"></span>
+<img src="img/tym-janousek.jpg" alt="" style="position: absolute; inset: 0; width: 380px; height: 380px; border-radius: 50%; object-fit: cover; object-position: 50% 15%; border: 3px solid #C8102E">
+</span>
+<div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<nav aria-label="Drobečková navigace" style="font-size: 14px; color: #6B7080"><a href="index.html">Úvod</a> / <a href="tym.html">Kdo jsme</a> / David Janoušek</nav>
+<h1 style="margin: 0; font-size: 64px; line-height: 1.04; color: #1B2B4B">David<br><span style="font-style: italic; color: #C8102E">Janoušek</span></h1>
+<span style="font-size: 17px; color: #6B7080">Mgr., Ph.D. · fyzioterapeut · sportovci, děti a kojenci</span>
+<p style="margin: 0; font-family: Fraunces, Georgia, serif; font-size: 24px; line-height: 1.45; color: #1B2B4B; max-width: 600px">„Hledáme řešení, které dítě vrátí k tomu, co ho baví.“</p>
+<span style="font-size: 13px; color: #8A8F9C"></span>
+<div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-top: 4px"><a href="#" style="background: #C8102E; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 17px; padding: 17px 30px; border-radius: 999px">Objednat se k Davidovi</a><span style="font-size: 15px; color: #4A5060"><a href="tel:+420608168690">+420 608 168 690</a> · <a href="mailto:janousek@4dfyzioterapie.cz">janousek@4dfyzioterapie.cz</a></span></div>
+</div></section>
+
+<section style="background: #FFFFFF"><div style="max-width: 900px; margin: 0 auto; padding: 88px 32px; display: flex; flex-direction: column; gap: 18px">
+<span style="font-family: Fraunces, Georgia, serif; font-style: italic; font-size: 18px; color: #C8102E">O Davidovi</span>
+<p style="margin: 0; font-size: 19px; line-height: 1.75; color: #2A2F3A">Na Fakultě sportovních studií MU se v doktorském studiu zabýval diagnostikou hybných poruch u kojenců. Absolvoval stáž na oddělení interdisciplinární vývojové neurovědy lékařské univerzity v Grazu, se kterým dál spolupracuje na výzkumu motorického vývoje kojenců.</p><p style="margin: 0; font-size: 19px; line-height: 1.75; color: #2A2F3A">Mimo výzkum jezdí jako fyzioterapeut na dálkové rallye – Rallye Dakar, Africa Eco Race nebo Silkway Rally – s týmy Bonver Dakar Project a Buggyra Racing.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 10px"><span style="font-family: Fraunces, Georgia, serif; font-size: 19px; color: #1B2B4B; margin-right: 6px">S čím vám pomůže:</span><a href="sport.html" style="font-size: 15px; color: #1B2B4B; text-decoration: none; padding: 10px 18px; border-radius: 999px; border: 1.5px solid #D9CFBF; background: #FFFFFF">Sportovci</a><a href="deti.html" style="font-size: 15px; color: #1B2B4B; text-decoration: none; padding: 10px 18px; border-radius: 999px; border: 1.5px solid #D9CFBF; background: #FFFFFF">Děti a miminka</a><a href="dospeli.html" style="font-size: 15px; color: #1B2B4B; text-decoration: none; padding: 10px 18px; border-radius: 999px; border: 1.5px solid #D9CFBF; background: #FFFFFF">Záda a klouby</a></div>
+</div></section>
+
+<section style="max-width: 1280px; margin: 0 auto; padding: 88px 32px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-family: Fraunces, Georgia, serif; font-style: italic; font-size: 18px; color: #C8102E">Jeho cesta</span><h2 style="margin: 0; font-size: 44px; color: #1B2B4B">Vzdělání a praxe</h2></div>
+<ol class="cv" style="margin: 0; padding: 0; list-style: none; position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 28px 28px">
+<span aria-hidden="true" style="position: absolute; left: 20px; right: 20px; top: 19px; height: 2px; background: linear-gradient(90deg, rgba(200,16,46,0.2), rgba(200,16,46,0.6), rgba(31,63,143,0.7))"></span><li style="display: flex; flex-direction: column; gap: 8px; position: relative">
+<span aria-hidden="true" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid #C8102E; background: #FBF7F0; opacity: 0.35; display: block; position: relative; z-index: 1"></span>
+<span style="font-family: Fraunces, Georgia, serif; font-style: italic; font-size: 16px; color: #C8102E">2011–2014</span>
+<span style="font-size: 16px; line-height: 1.45; color: #2A2F3A">Fyzioterapie, FSpS MU · <strong>Bc.</strong></span></li><li style="display: flex; flex-direction: column; gap: 8px; position: relative">
+<span aria-hidden="true" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid #C8102E; background: #FBF7F0; opacity: 0.5; display: block; position: relative; z-index: 1"></span>
+<span style="font-family: Fraunces, Georgia, serif; font-style: italic; font-size: 16px; color: #C8102E">2014–2016</span>
+<span style="font-size: 16px; line-height: 1.45; color: #2A2F3A">Fyzioterapie, 2. LF UK · <strong>Mgr.</strong> · FN Motol</span></li><li style="display: flex; flex-direction: column; gap: 8px; position: relative">
+<span aria-hidden="true" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid #C8102E; background: #FBF7F0; opacity: 0.65; display: block; position: relative; z-index: 1"></span>
+<span style="font-family: Fraunces, Georgia, serif; font-style: italic; font-size: 16px; color: #C8102E">2016–2020</span>
+<span style="font-size: 16px; line-height: 1.45; color: #2A2F3A">Doktorské studium FSpS MU · <strong>Ph.D.</strong></span></li><li style="display: flex; flex-direction: column; gap: 8px; position: relative">
+<span aria-hidden="true" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid #C8102E; background: #FBF7F0; opacity: 0.8; display: block; position: relative; z-index: 1"></span>
+<span style="font-family: Fraunces, Georgia, serif; font-style: italic; font-size: 16px; color: #C8102E">od 2017</span>
+<span style="font-size: 16px; line-height: 1.45; color: #2A2F3A">4D Fyzioterapie, Brno</span></li><li style="display: flex; flex-direction: column; gap: 8px; position: relative">
+<span aria-hidden="true" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid #1F3F8F; background: #FBF7F0; opacity: 1; display: block; position: relative; z-index: 1"></span>
+<span style="font-family: Fraunces, Georgia, serif; font-style: italic; font-size: 16px; color: #C8102E">2019</span>
+<span style="font-size: 16px; line-height: 1.45; color: #2A2F3A">Reprezentace ledního hokeje U18 na MS ve Švédsku</span></li></ol>
+</section>
+<section style="background: #FFFFFF"><div style="max-width: 1280px; margin: 0 auto; padding: 88px 32px; display: flex; flex-direction: column; gap: 28px">
+<h2 style="margin: 0; font-size: 44px; color: #1B2B4B">Odborné kurzy</h2>
+<div class="kurzy" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); column-gap: 64px">
+<ul style="margin: 0; padding: 0; list-style: none; border-bottom: 1px solid #E6DDCD"><li style="display: flex; gap: 14px; font-size: 17px; line-height: 1.55; color: #2A2F3A; padding: 12px 0; border-top: 1px solid #E6DDCD"><span aria-hidden="true" style="flex: 0 0 auto; width: 10px; height: 10px; border-radius: 50%; border: 2px solid #C8102E; margin-top: 8px"></span><span>Bazální posturální programy</span></li><li style="display: flex; gap: 14px; font-size: 17px; line-height: 1.55; color: #2A2F3A; padding: 12px 0; border-top: 1px solid #E6DDCD"><span aria-hidden="true" style="flex: 0 0 auto; width: 10px; height: 10px; border-radius: 50%; border: 2px solid #C8102E; margin-top: 8px"></span><span>Inovované Klappovo lezení</span></li><li style="display: flex; gap: 14px; font-size: 17px; line-height: 1.55; color: #2A2F3A; padding: 12px 0; border-top: 1px solid #E6DDCD"><span aria-hidden="true" style="flex: 0 0 auto; width: 10px; height: 10px; border-radius: 50%; border: 2px solid #C8102E; margin-top: 8px"></span><span>Fascial Manipulation Stecco</span></li></ul>
+<ul class="k2" style="margin: 0; padding: 0; list-style: none; border-bottom: 1px solid #E6DDCD"><li style="display: flex; gap: 14px; font-size: 17px; line-height: 1.55; color: #2A2F3A; padding: 12px 0; border-top: 1px solid #E6DDCD"><span aria-hidden="true" style="flex: 0 0 auto; width: 10px; height: 10px; border-radius: 50%; border: 2px solid #C8102E; margin-top: 8px"></span><span>Spinal Manipulation – American Academy of Manipulative Therapy</span></li><li style="display: flex; gap: 14px; font-size: 17px; line-height: 1.55; color: #2A2F3A; padding: 12px 0; border-top: 1px solid #E6DDCD"><span aria-hidden="true" style="flex: 0 0 auto; width: 10px; height: 10px; border-radius: 50%; border: 2px solid #C8102E; margin-top: 8px"></span><span>Dry Needling</span></li><li style="display: flex; gap: 14px; font-size: 17px; line-height: 1.55; color: #2A2F3A; padding: 12px 0; border-top: 1px solid #E6DDCD"><span aria-hidden="true" style="flex: 0 0 auto; width: 10px; height: 10px; border-radius: 50%; border: 2px solid #C8102E; margin-top: 8px"></span><span>Komplexní terapie triggerpointů</span></li><li style="display: flex; gap: 14px; font-size: 17px; line-height: 1.55; color: #2A2F3A; padding: 12px 0; border-top: 1px solid #E6DDCD"><span aria-hidden="true" style="flex: 0 0 auto; width: 10px; height: 10px; border-radius: 50%; border: 2px solid #C8102E; margin-top: 8px"></span><span>Viscerovertebrální vztahy</span></li><li style="display: flex; gap: 14px; font-size: 17px; line-height: 1.55; color: #2A2F3A; padding: 12px 0; border-top: 1px solid #E6DDCD"><span aria-hidden="true" style="flex: 0 0 auto; width: 10px; height: 10px; border-radius: 50%; border: 2px solid #C8102E; margin-top: 8px"></span><span>Test of Infant Motor Performance</span></li><li style="display: flex; gap: 14px; font-size: 17px; line-height: 1.55; color: #2A2F3A; padding: 12px 0; border-top: 1px solid #E6DDCD"><span aria-hidden="true" style="flex: 0 0 auto; width: 10px; height: 10px; border-radius: 50%; border: 2px solid #C8102E; margin-top: 8px"></span><span>MABC-2</span></li><li style="display: flex; gap: 14px; font-size: 17px; line-height: 1.55; color: #2A2F3A; padding: 12px 0; border-top: 1px solid #E6DDCD"><span aria-hidden="true" style="flex: 0 0 auto; width: 10px; height: 10px; border-radius: 50%; border: 2px solid #C8102E; margin-top: 8px"></span><span>Prechtlova metoda analýzy GMs</span></li><li style="display: flex; gap: 14px; font-size: 17px; line-height: 1.55; color: #2A2F3A; padding: 12px 0; border-top: 1px solid #E6DDCD"><span aria-hidden="true" style="flex: 0 0 auto; width: 10px; height: 10px; border-radius: 50%; border: 2px solid #C8102E; margin-top: 8px"></span><span>Vývojová kineziologie podle Vojty, část A</span></li><li style="display: flex; gap: 14px; font-size: 17px; line-height: 1.55; color: #2A2F3A; padding: 12px 0; border-top: 1px solid #E6DDCD"><span aria-hidden="true" style="flex: 0 0 auto; width: 10px; height: 10px; border-radius: 50%; border: 2px solid #C8102E; margin-top: 8px"></span><span>Terapie ramenního kloubu z pohledu BPP</span></li><li style="display: flex; gap: 14px; font-size: 17px; line-height: 1.55; color: #2A2F3A; padding: 12px 0; border-top: 1px solid #E6DDCD"><span aria-hidden="true" style="flex: 0 0 auto; width: 10px; height: 10px; border-radius: 50%; border: 2px solid #C8102E; margin-top: 8px"></span><span>Kinesio taping, Medical taping concept</span></li></ul></div>
+</div></section>
+<section style="max-width: 900px; margin: 0 auto; padding: 88px 32px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px">
+<span aria-hidden="true" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid #C8102E; display: block"></span>
+<blockquote style="margin: 0; font-family: Fraunces, Georgia, serif; font-size: 32px; line-height: 1.4; color: #1B2B4B">„Díky Davidovi můžu dělat můj největší koníček naplno!“</blockquote>
+<span style="font-size: 15px; color: #6B7080">Jiří Čípa, mistr světa v dlouhém horském běhu · <a href="pribehy.html">Příběhy</a></span></section>
+<section style="background: #F3EBDD"><div style="max-width: 1280px; margin: 0 auto; padding: 72px 32px; display: flex; flex-wrap: wrap; gap: 32px; align-items: center; justify-content: space-between">
+<h2 style="margin: 0; font-size: 44px; line-height: 1.1; color: #1B2B4B">Uděláme první <span style="font-style: italic; color: #C8102E">krok spolu?</span></h2>
+<div style="display: flex; gap: 12px; flex-wrap: wrap"><a href="#" style="background: #C8102E; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 17px; padding: 17px 30px; border-radius: 999px">Objednat se k Davidovi</a><a href="tym.html" style="color: #1B2B4B; text-decoration: none; font-weight: 600; font-size: 17px; padding: 16px 28px; border-radius: 999px; border: 1.5px solid #D9CFBF">Celý tým</a></div>
+</div></section>
+<footer style="background: #1B2B4B; color: #D5DAE3"><div style="max-width: 1280px; margin: 0 auto; padding: 44px 32px; display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between; align-items: center">
+<img src="img/87b77ae2-logo-4d-na-vysku-na-tmavem.svg" alt="4D Fyzioterapie" style="width: 100px; height: auto; display: block">
+<span style="font-size: 14px">4D FYZIOTERAPIE s.r.o. · Masarykova 506/37, 602 00 Brno · <a href="tel:+420775991485" style="color: #D5DAE3">+420 775 991 485</a></span>
+<span style="font-size: 13px; color: #9AA3B5">© 2017–2026 · <a href="#" style="color: #9AA3B5">Ochrana osobních údajů</a></span>
+</div></footer>
+</div>
+<div class="m-note" style="position:fixed;left:12px;bottom:12px;z-index:50;background:#1B2B4B;color:#fff;font:13px Inter,sans-serif;padding:8px 14px;border-radius:999px;opacity:.9">Návrh webu 4D · <a href="prehled.html" style="color:#F2C14E">Přehled všech stránek</a></div><div class="m-cta"><a href="#">Objednat se online</a></div><script>
+document.querySelectorAll('.car').forEach(function(c){
+  var items=[].filter.call(c.children,function(e){return !e.matches('.tl-line,.tl-end')});
+  var d=document.createElement('div'); d.className='car-dots';
+  items.forEach(function(it){var b=document.createElement('button'); b.setAttribute('aria-label','Další'); b.onclick=function(){c.scrollTo({left:it.offsetLeft-20,behavior:'smooth'})}; d.appendChild(b)});
+  c.parentNode.insertBefore(d,c.nextSibling);
+  function upd(){var k=0,best=1e9; items.forEach(function(it,i){var x=Math.abs(it.offsetLeft-20-c.scrollLeft); if(x<best){best=x;k=i}}); [].forEach.call(d.children,function(b,i){b.classList.toggle('on',i==k)})}
+  c.addEventListener('scroll',upd,{passive:true}); upd();
+});
+document.querySelectorAll('.tabs-s').forEach(function(t){
+  var panes=[].slice.call(t.children); var sw=document.createElement('div'); sw.className='tab-sw';
+  panes.forEach(function(p,i){var b=document.createElement('button'); var h=p.querySelector('h2'); b.textContent=p.dataset.tab||(h?h.textContent:('Část '+(i+1)));
+    b.onclick=function(){panes.forEach(function(x){x.classList.remove('on')}); [].forEach.call(sw.children,function(x){x.classList.remove('on')}); p.classList.add('on'); b.classList.add('on')};
+    if(i==0){p.classList.add('on'); b.classList.add('on')} sw.appendChild(b)});
+  t.insertBefore(sw,t.firstChild);
+});
+document.querySelectorAll('.dk-line').forEach(function(line){
+  var root=line.parentNode, links=line.querySelectorAll('.dk');
+  links.forEach(function(a){a.addEventListener('click',function(e){e.preventDefault(); var k=a.dataset.k;
+    root.querySelectorAll('.dk-p').forEach(function(p){p.style.display=(p.dataset.k==k)?'flex':'none'});
+    links.forEach(function(b){var on=b==a, im=b.querySelector('img'), t=b.querySelector('span');
+      im.style.width=im.style.height=(on?96:76)+'px'; im.style.borderColor=on?'#C8102E':'#FBF7F0'; t.style.color=on?'#C8102E':'#1B2B4B'});
+  })});
+});
+document.querySelectorAll('.kurzy').forEach(function(k){
+  var n=k.querySelectorAll('.k2 li').length; var b=document.createElement('button'); b.className='k-more'; b.textContent='Zobrazit další kurzy ('+n+')';
+  b.onclick=function(){k.classList.add('open')}; k.parentNode.insertBefore(b,k.nextSibling);
+});
+</script></body></html>

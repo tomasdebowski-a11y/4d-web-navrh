@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head><meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Návrh webu 4D – varianty úvodu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1B2B4B;--red:#C8102E;--blue:#1F3F8F;--txt:#4A5060;--cream:#FBF7F0}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,sans-serif;background:#E9E2D6;color:#2A2F3A}
+h1{font-family:Fraunces,Georgia,serif;font-weight:400;margin:0;color:var(--navy)}
+em{font-style:italic;color:var(--red)}
+a{color:var(--blue)}
+.tag{max-width:1280px;margin:0 auto;padding:44px 32px 14px;display:flex;flex-wrap:wrap;gap:8px 18px;align-items:baseline}
+.tag b{font-family:Fraunces,Georgia,serif;font-weight:400;font-size:30px;color:var(--navy)}
+.tag span{font-size:15px;color:#5C6170;max-width:760px;line-height:1.5}
+.frame{max-width:1376px;margin:0 auto;background:var(--cream);border-radius:22px;overflow:hidden;box-shadow:0 20px 50px rgba(27,43,75,.10);position:relative}
+.hdr{max-width:1280px;margin:0 auto;padding:22px 32px;display:flex;justify-content:space-between;align-items:center;gap:24px}
+.hdr img{height:46px;display:block}
+.hdr nav{display:flex;gap:26px;font-size:15px;align-items:center}
+.hdr nav a{color:#2A2F3A;text-decoration:none}
+.hdr nav a.cta,.btn{background:var(--red);color:#fff !important;text-decoration:none;font-weight:600;border-radius:999px}
+.hdr nav a.cta{padding:11px 20px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{font-size:17px;padding:17px 30px}
+.btn2{color:var(--navy);text-decoration:none;font-weight:600;font-size:17px;padding:16px 28px;border-radius:999px;border:1.5px solid #D9CFBF;background:#fff}
+.lead{margin:0;font-size:20px;line-height:1.6;color:var(--txt);max-width:600px}
+.end{height:60px}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+
+/* ===== A – stopa za slovem ===== */
+.A .hero{max-width:1280px;margin:0 auto;padding:70px 32px 90px;display:flex;flex-direction:column;gap:30px}
+.A h1{font-size:104px;line-height:1.0}
+.A .trail{display:inline-block;position:relative;width:1.75em;height:.62em;vertical-align:baseline;margin-left:.06em}
+.A .trail i{position:absolute;left:0;bottom:-.02em;width:.42em;height:.42em;border-radius:50%;border:.035em solid var(--red);transform:translateX(calc(var(--k) * .3em));animation:aGo 4.8s cubic-bezier(.45,0,.2,1) infinite;animation-delay:calc(var(--k) * .12s)}
+.A .trail i:last-child{border-color:var(--blue);background:var(--blue)}
+@keyframes aGo{0%{transform:translateX(0);opacity:0} 18%{opacity:1} 55%,85%{transform:translateX(calc(var(--k) * .3em))} 100%{transform:translateX(calc(var(--k) * .3em + .2em));opacity:0}}
+.A .row{display:flex;flex-wrap:wrap;gap:28px 64px;align-items:flex-end;justify-content:space-between}
+
+/* ===== B – kruhy za textem ===== */
+.B .hero{position:relative;overflow:hidden}
+.B .rings{position:absolute;inset:0;pointer-events:none}
+.B .rings i{position:absolute;top:50%;left:8%;width:560px;height:560px;margin-top:-300px;border-radius:50%;border:2px solid var(--red);transform:translateX(calc(var(--k) * 140px));animation:bDrift 9s ease-in-out infinite;animation-delay:calc(var(--k) * -.6s)}
+.B .rings i:last-child{border-color:var(--blue);border-width:2.5px}
+@keyframes bDrift{0%,100%{transform:translateX(calc(var(--k) * 92px))} 50%{transform:translateX(calc(var(--k) * 150px))}}
+.B .inner{position:relative;max-width:1280px;margin:0 auto;padding:90px 32px 110px;display:flex;flex-direction:column;gap:30px}
+.B h1{font-size:92px;line-height:1.0;max-width:900px}
+.B .vals{display:flex;flex-wrap:wrap;gap:12px 40px;margin-top:18px;font-family:Fraunces,Georgia,serif;font-size:21px;color:var(--navy)}
+.B .vals span{display:inline-flex;align-items:center;gap:10px}
+.B .vals span::before{content:"";width:12px;height:12px;border-radius:50%;border:2px solid var(--red)}
+.B .vals span:last-child::before{border-color:var(--blue)}
+
+/* ===== C – čtyři slovesa ===== */
+.C .hero{max-width:1280px;margin:0 auto;padding:70px 32px 100px;display:flex;flex-wrap:wrap;gap:48px 56px;align-items:center}
+.C .txt{flex:1 1 560px;min-width:0;display:flex;flex-direction:column;gap:28px}
+.C h1{font-size:80px;line-height:1.0}
+.C .lead b{font-weight:400;color:var(--txt);background:linear-gradient(var(--red),var(--red)) no-repeat 0 100%/0 2px;transition:background-size .6s,color .4s;padding-bottom:2px}
+.C .lead b.on{background-size:100% 2px;color:var(--navy)}
+.C .chain{flex:0 0 auto;position:relative;width:520px;height:450px}
+.C .ring{position:absolute;width:240px;height:240px;border-radius:50%;border:2px solid rgba(200,16,46,.35);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;padding:28px;transition:all .6s cubic-bezier(.2,.8,.2,1);background:transparent;cursor:pointer}
+.C .ring strong{font-family:Fraunces,Georgia,serif;font-weight:400;font-size:24px;color:var(--navy);transition:color .4s}
+.C .ring small{font-size:14px;line-height:1.4;color:#6B7080;opacity:0;transform:translateY(6px);transition:all .5s;max-width:170px}
+.C .ring.on{background:#fff;border-color:var(--red);box-shadow:0 22px 50px rgba(27,43,75,.10);z-index:5;transform:scale(1.06)}
+.C .ring.on strong{color:var(--red)}
+.C .ring.on small{opacity:1;transform:none}
+.C .ring:nth-child(4){border-color:rgba(31,63,143,.45)}
+.C .ring:nth-child(4).on{border-color:var(--blue)}
+.C .ring:nth-child(4).on strong{color:var(--blue)}
+.C .r1{left:0;top:0}.C .r2{left:226px;top:24px}.C .r3{left:34px;top:206px}.C .r4{left:262px;top:196px}
+
+
+/* ===== D – kruh, který se uzavírá ===== */
+.D .hero{max-width:1280px;margin:0 auto;padding:60px 32px 90px;display:flex;flex-wrap:wrap;gap:40px 64px;align-items:center;justify-content:space-between}
+.D .txt{flex:1 1 560px;min-width:0;display:flex;flex-direction:column;gap:28px}
+.D h1{font-size:84px;line-height:1.0}
+.D svg{flex:0 0 auto;width:400px;height:400px;overflow:visible}
+.D .arc{fill:none;stroke:var(--navy);stroke-width:3;stroke-linecap:round}
+.D .close{fill:none;stroke:var(--red);stroke-width:3;stroke-linecap:round;stroke-dasharray:var(--g) 2000;stroke-dashoffset:var(--g);animation:dClose 7s cubic-bezier(.5,0,.2,1) infinite}
+.D .dot{fill:none;stroke:var(--red);stroke-width:2.5;transform-box:fill-box;transform-origin:center;animation:dDot 7s ease-out infinite;animation-delay:calc(var(--k)*.3s)}
+.D .dot.last{fill:var(--blue);stroke:none}
+@keyframes dDot{0%{opacity:0;transform:scale(.3)} 9%{opacity:var(--o);transform:scale(1)} 50%{opacity:var(--o);transform:scale(1)} 62%,100%{opacity:0;transform:scale(.6)}}
+@keyframes dClose{0%,48%{stroke-dashoffset:var(--g)} 62%,88%{stroke-dashoffset:0} 100%{stroke-dashoffset:var(--g);opacity:0}}
+@media (max-width:760px){.D .hero{padding:36px 20px 60px}.D h1{font-size:42px}.D svg{width:240px;height:240px;margin:0 auto}}
+
+/* ===== mobil ===== */
+@media (max-width:760px){
+ .tag{padding:32px 16px 12px}.tag b{font-size:24px}
+ .frame{border-radius:0}
+ .hdr{padding:14px 18px}.hdr nav a:not(.cta){display:none}.hdr img{height:38px}
+ .lead{font-size:17px}
+ .A .hero,.C .hero{padding:36px 20px 60px}
+ .A h1{font-size:50px}
+ .B .inner{padding:44px 20px 70px}.B h1{font-size:46px}
+ .B .rings i{width:320px;height:320px;margin-top:-170px;left:-30%}
+ @keyframes bDrift{0%,100%{transform:translateX(calc(var(--k) * 50px))} 50%{transform:translateX(calc(var(--k) * 82px))}}
+ .B .vals{font-size:17px;gap:10px 22px}
+ .C h1{font-size:42px}
+ .C .chain{width:340px;height:310px;margin:0 auto}
+ .C .ring{width:160px;height:160px;padding:14px}
+ .C .ring strong{font-size:17px}.C .ring small{font-size:11.5px;max-width:120px}
+ .C .r1{left:0;top:0}.C .r2{left:166px;top:16px}.C .r3{left:20px;top:142px}.C .r4{left:180px;top:136px}
+ .btn,.btn2{font-size:16px;padding:15px 24px}
+}
+</style>
+</head>
+<body>
+
+<div class="tag"><b>A · Stopa za slovem</b><span>Žádná grafika vedle textu – kruhy z loga vyjíždějí přímo z nadpisu a poslední, modrý, se stane tečkou za „do života“. Vyniká síla textu, pohyb je jen akcent.</span></div>
+<div class="frame A">
+<div class="hdr"><img src="img/95823f2a-logo-4d-na-sirku-barevne.svg" alt="4D Fyzioterapie"><nav><a href="#">Komu pomáháme</a><a href="#">Kdo jsme</a><a href="#">Diagnostika</a><a href="#">Příběhy</a><a href="#">Ceník</a><a href="#">Kontakt</a><a class="cta" href="#">Objednat se</a></nav></div>
+<section class="hero">
+<h1>Pohyb, který vrací<br><em>do života</em><span class="trail" aria-hidden="true"><i style="--k:0;opacity:.25"></i><i style="--k:1;opacity:.45"></i><i style="--k:2;opacity:.65"></i><i style="--k:3;opacity:.85"></i><i style="--k:4"></i></span></h1>
+<div class="row"><p class="lead">Vyslechneme vás, srozumitelně vysvětlíme, co se ve vašem těle děje, a na dalším postupu se domluvíme spolu. A zůstaneme s vámi tak dlouho, jak bude potřeba – klidně po malých krůčcích.</p>
+<div class="btns"><a class="btn" href="#">Objednat se online</a><a class="btn2" href="#">Najít svého terapeuta</a></div></div>
+</section>
+</div>
+
+<div class="tag"><b>B · Kruhy za textem</b><span>Velké tenké kruhy se pomalu přelévají přes celou úvodní plochu, text stojí na nich. Působí klidně a vzdušně, čtyři hodnoty jsou pod tlačítky jako drobné kroužky.</span></div>
+<div class="frame B">
+<div class="hero">
+<div class="rings" aria-hidden="true"><i style="--k:0;opacity:.07"></i><i style="--k:1;opacity:.12"></i><i style="--k:2;opacity:.2"></i><i style="--k:3;opacity:.32"></i><i style="--k:4;opacity:.5"></i></div>
+<div class="hdr" style="position:relative"><img src="img/95823f2a-logo-4d-na-sirku-barevne.svg" alt="4D Fyzioterapie"><nav><a href="#">Komu pomáháme</a><a href="#">Kdo jsme</a><a href="#">Diagnostika</a><a href="#">Příběhy</a><a href="#">Ceník</a><a href="#">Kontakt</a><a class="cta" href="#">Objednat se</a></nav></div>
+<div class="inner">
+<h1>Pohyb, který vrací<br><em>do života</em>.</h1>
+<p class="lead">Vyslechneme vás, srozumitelně vysvětlíme, co se ve vašem těle děje, a na dalším postupu se domluvíme spolu. A zůstaneme s vámi tak dlouho, jak bude potřeba – klidně po malých krůčcích.</p>
+<div class="btns"><a class="btn" href="#">Objednat se online</a><a class="btn2" href="#">Najít svého terapeuta</a></div>
+<div class="vals"><span>Lidský přístup</span><span>Mluvíme spolu</span><span>Spolupracujeme</span><span>Jsme s vámi dlouhodobě</span></div>
+</div></div>
+</div>
+
+<div class="tag"><b>C · Čtyři slovesa</b><span>Kruhy nesou čtyři slovesa z věty pod nadpisem. Postupně se rozsvěcují a ve stejném okamžiku se v textu podtrhne totéž slovo – kruhy a text spolu „mluví“. Na kruh jde i klepnout. Nahrazuje samostatný řádek čtyř hodnot.</span></div>
+<div class="frame C">
+<div class="hdr"><img src="img/95823f2a-logo-4d-na-sirku-barevne.svg" alt="4D Fyzioterapie"><nav><a href="#">Komu pomáháme</a><a href="#">Kdo jsme</a><a href="#">Diagnostika</a><a href="#">Příběhy</a><a href="#">Ceník</a><a href="#">Kontakt</a><a class="cta" href="#">Objednat se</a></nav></div>
+<section class="hero">
+<div class="txt">
+<h1>Pohyb, který vrací<br><em>do života</em>.</h1>
+<p class="lead"><b data-w="0">Vyslechneme</b> vás, srozumitelně <b data-w="1">vysvětlíme</b>, co se ve vašem těle děje, a na dalším postupu se <b data-w="2">domluvíme</b> spolu. A <b data-w="3">zůstaneme</b> s vámi tak dlouho, jak bude potřeba – klidně po malých krůčcích.</p>
+<div class="btns"><a class="btn" href="#">Objednat se online</a><a class="btn2" href="#">Najít svého terapeuta</a></div>
+</div>
+<div class="chain">
+<div class="ring r1" data-w="0"><strong>Vyslechneme</strong><small>Nejste diagnóza ani číslo v kalendáři. Na nic nespěcháme.</small></div>
+<div class="ring r2" data-w="1"><strong>Vysvětlíme</strong><small>Srozumitelně, co se v těle děje – a ptáme se na váš názor.</small></div>
+<div class="ring r3" data-w="2"><strong>Domluvíme se</strong><small>Plán stavíme společně – a cvičíte i doma.</small></div>
+<div class="ring r4" data-w="3"><strong>Zůstaneme</strong><small>Týdny, měsíce, někdy i roky.</small></div>
+</div>
+</section>
+</div>
+
+<div class="tag"><b>D · Kruh, který se uzavírá</b><span>Velký kruh vedle nadpisu, kterému chybí kus. Mezeru postupně vyplní stopa kroužků a kruh se uzavře – a zase se otevře. Nemusí se „luštit“: působí jako pohyb, který se dokončí.</span></div>
+<div class="frame D">
+<div class="hdr"><img src="img/95823f2a-logo-4d-na-sirku-barevne.svg" alt="4D Fyzioterapie"><nav><a href="#">Komu pomáháme</a><a href="#">Kdo jsme</a><a href="#">Diagnostika</a><a href="#">Příběhy</a><a href="#">Ceník</a><a href="#">Kontakt</a><a class="cta" href="#">Objednat se</a></nav></div>
+<section class="hero">
+<div class="txt">
+<h1>Pohyb, který vrací<br><em>do života</em>.</h1>
+<p class="lead">Vyslechneme vás, srozumitelně vysvětlíme, co se ve vašem těle děje, a na dalším postupu se domluvíme spolu. A zůstaneme s vámi tak dlouho, jak bude potřeba – klidně po malých krůčcích.</p>
+<div class="btns"><a class="btn" href="#">Objednat se online</a><a class="btn2" href="#">Najít svého terapeuta</a></div>
+</div>
+<svg id="dsym" viewBox="0 0 300 300" aria-hidden="true"></svg>
+</section>
+</div>
+<div class="end"></div>
+
+<script>
+(function(){
+ var rings=[].slice.call(document.querySelectorAll('.C .ring')), words=[].slice.call(document.querySelectorAll('.C .lead b')), k=0, t;
+ function show(i){k=i;rings.forEach(function(r){r.classList.toggle('on',+r.dataset.w===i)});words.forEach(function(w){w.classList.toggle('on',+w.dataset.w===i)});}
+ function next(){show((k+1)%4)}
+ function start(){clearInterval(t);t=setInterval(next,3200)}
+ rings.forEach(function(r){r.addEventListener('click',function(){show(+r.dataset.w);start()});r.addEventListener('mouseenter',function(){show(+r.dataset.w);clearInterval(t)});r.addEventListener('mouseleave',start)});
+ show(0); if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches) start();
+})();
+
+(function(){
+ var svg=document.getElementById('dsym'); if(!svg) return;
+ var c=150,r=128,g0=-72,g1=-2;
+ function pt(a){var t=a*Math.PI/180;return [c+r*Math.cos(t),c+r*Math.sin(t)];}
+ var a0=pt(g1),a1=pt(g0), L=(Math.PI*2*r*(g1-g0)/360).toFixed(1);
+ var h='<path class="arc" d="M '+a0[0].toFixed(1)+' '+a0[1].toFixed(1)+' A '+r+' '+r+' 0 1 1 '+a1[0].toFixed(1)+' '+a1[1].toFixed(1)+'"/>';
+ h+='<path class="close" style="--g:'+L+'" d="M '+a1[0].toFixed(1)+' '+a1[1].toFixed(1)+' A '+r+' '+r+' 0 0 1 '+a0[0].toFixed(1)+' '+a0[1].toFixed(1)+'"/>';
+ var ops=[.3,.5,.75,1], rs=[4,5.5,7,9];
+ for(var i=0;i<4;i++){var p=pt(g0+(g1-g0)*(i+.5)/4); h+='<circle class="dot'+(i==3?' last':'')+'" style="--k:'+i+';--o:'+ops[i]+'" cx="'+p[0].toFixed(1)+'" cy="'+p[1].toFixed(1)+'" r="'+rs[i]+'"/>';}
+ svg.innerHTML=h;
+})();
+</script>
+</body>
+</html>
