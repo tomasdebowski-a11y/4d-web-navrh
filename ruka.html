@@ -147,9 +147,21 @@ h1,h2,h3{font-family:Fraunces, Georgia, serif;font-weight:400}
   .tl-sec.car{padding-bottom:4px !important;gap:14px !important}
   .tl-sec .tl-row{min-height:0 !important}
   .hero-u p[style*="font-size: 28px"]{font-size:19px !important}
-  .fv{max-width:none !important;padding:14px 8px 10px !important;box-shadow:none !important;background:#FBF7F0 !important}
-  .fv strong{font-size:14px !important}
-  .fv li span:last-child{font-size:11px !important}
+  .fv{box-sizing:border-box;max-width:none !important;padding:16px 16px 12px !important;box-shadow:none !important;background:#FBF7F0 !important}
+  .fv ol{flex-direction:column !important;gap:12px !important}
+  .fv ol > span{left:7px !important;right:auto !important;top:10px !important;bottom:10px !important;width:2px !important;height:auto !important;background:linear-gradient(180deg,rgba(200,16,46,.3),rgba(31,63,143,.8)) !important}
+  .fv li{flex-direction:row !important;align-items:baseline !important;text-align:left !important;gap:12px !important;flex:none !important}
+  .fv li > span:first-child{flex:0 0 auto;align-self:flex-start;margin-top:2px}
+  .fv strong{font-size:16px !important;flex:0 0 88px}
+  .fv li span:last-child{font-size:13px !important}
+  .fv > span{text-align:left !important;margin-top:10px !important}
+  .tl-sec.car.car{display:flex !important;flex-direction:column !important;overflow:visible !important;gap:22px !important;margin:0 !important;padding:8px 20px 10px 50px !important;position:relative;box-sizing:border-box;width:100% !important;max-width:100% !important}
+  .tl-sec.car.car::before{content:"";position:absolute;left:28px;top:24px;bottom:330px;width:2px;background:linear-gradient(180deg,rgba(200,16,46,.25),#C8102E)}
+  .tl-sec.car.car > *{flex:none !important;width:100% !important}
+  .tl-sec .tl-row{position:relative;overflow:visible !important}
+  .tl-sec .tl-row::before{content:"";position:absolute;left:-29px;top:20px;width:16px;height:16px;border-radius:50%;border:2px solid #C8102E;background:#FBF7F0}
+  .tl-sec .tl-row img{height:150px !important;border-radius:26px 26px 0 0 !important}
+  .tl-sec + .car-dots{display:none !important}
   .m-cta{display:flex !important}
   .m-note{bottom:84px !important}
   body{padding-bottom:76px}
