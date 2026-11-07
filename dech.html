@@ -162,6 +162,16 @@ h1,h2,h3{font-family:Fraunces, Georgia, serif;font-weight:400}
   .tl-sec .tl-row::before{content:"";position:absolute;left:-29px;top:20px;width:16px;height:16px;border-radius:50%;border:2px solid #C8102E;background:#FBF7F0}
   .tl-sec .tl-row img{height:150px !important;border-radius:26px 26px 0 0 !important}
   .tl-sec + .car-dots{display:none !important}
+  .tl-sec .tl-row{position:sticky !important;top:calc(78px + var(--i,0) * 14px);box-shadow:0 -10px 30px rgba(27,43,75,.10);transition:transform .3s}
+  .tl-sec .tl-row:nth-child(2){--i:0}.tl-sec .tl-row:nth-child(3){--i:1}.tl-sec .tl-row:nth-child(4){--i:2}
+  .tl-sec .tl-row img{height:120px !important}
+  .tl-sec .tl-row.under{transform:scale(.96);filter:brightness(.97)}
+  .tl-sec.car.car::before{background:#EADFD0 !important}
+  .tl-sec.car.car > .tl-fill{width:2px !important}
+  .tl-sec.car.car > div:last-of-type{position:relative;z-index:5;background:#FBF7F0;margin:0 -20px 0 -50px !important;padding:34px 20px 10px !important;width:auto !important;max-width:none !important;box-shadow:0 -14px 30px rgba(27,43,75,.08);border-radius:28px 28px 0 0}
+  .tl-fill{position:absolute;left:28px;top:24px;width:2px;height:0;background:linear-gradient(180deg,rgba(200,16,46,.35),#C8102E);z-index:0;border-radius:2px}
+  .js-anim .fv li{opacity:.28;transform:translateX(-6px);transition:opacity .5s,transform .5s}
+  .js-anim .fv li.lit{opacity:1;transform:none}
   .m-cta{display:flex !important}
   .m-note{bottom:84px !important}
   body{padding-bottom:76px}
@@ -263,6 +273,25 @@ h1,h2,h3{font-family:Fraunces, Georgia, serif;font-weight:400}
 </div></footer>
 </div>
 <div class="m-note" style="position:fixed;left:12px;bottom:12px;z-index:50;background:#1B2B4B;color:#fff;font:13px Inter,sans-serif;padding:8px 14px;border-radius:999px;opacity:.9">Návrh webu 4D · <a href="prehled.html" style="color:#F2C14E">Přehled všech stránek</a></div><div class="m-cta"><a href="#">Objednat se online</a></div><script>
+
+if (window.matchMedia('(max-width: 760px)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.documentElement.classList.add('js-anim');
+  document.querySelectorAll('.tl-sec').forEach(function(sec){
+    var fill=document.createElement('span'); fill.className='tl-fill'; sec.appendChild(fill);
+    var rows=[].slice.call(sec.querySelectorAll('.tl-row'));
+    function tops(){ rows.forEach(function(row,i){ row.style.setProperty('top', Math.min(78+i*14, innerHeight-96-row.offsetHeight)+'px','important'); }); }
+    tops(); addEventListener('resize',tops); addEventListener('load',tops); setTimeout(tops,800);
+    function upd(){
+      var r=sec.getBoundingClientRect(), max=(rows.length?rows[rows.length-1].offsetTop+40:sec.offsetHeight)-24, done=Math.min(max, Math.max(0, innerHeight*0.6 - r.top - 24));
+      fill.style.height=done+'px';
+      rows.forEach(function(row,i){ var nx=rows[i+1]; row.classList.toggle('under', !!nx && nx.getBoundingClientRect().top < row.getBoundingClientRect().top + 140); });
+    }
+    addEventListener('scroll',upd,{passive:true}); addEventListener('resize',upd); upd();
+  });
+  var lis=document.querySelectorAll('.fv li');
+  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ var li=e.target, k=[].indexOf.call(li.parentNode.querySelectorAll('li'),li); setTimeout(function(){li.classList.add('lit')}, k*260); io.unobserve(li);} }); },{rootMargin:'0px 0px -18% 0px'});
+  lis.forEach(function(li){io.observe(li)});
+}
 document.querySelectorAll('.car').forEach(function(c){
   var items=[].filter.call(c.children,function(e){return !e.matches('.tl-line,.tl-end')});
   var d=document.createElement('div'); d.className='car-dots';
