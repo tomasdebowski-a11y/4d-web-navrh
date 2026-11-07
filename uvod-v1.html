@@ -144,37 +144,44 @@ h1,h2,h3{font-family:Fraunces, Georgia, serif;font-weight:400}
   section > div{padding-left:0 !important;padding-right:0 !important}
   section:has(> div > .car) > div{padding-left:20px !important;padding-right:20px !important}
   .car.car{align-items:flex-start !important}
-  .tl-sec.car{padding-bottom:4px !important;gap:14px !important}
-  .tl-sec .tl-row{min-height:0 !important}
-  .hero-u p[style*="font-size: 28px"]{font-size:19px !important}
-  .fv{box-sizing:border-box;max-width:none !important;padding:16px 16px 12px !important;box-shadow:none !important;background:#FBF7F0 !important}
-  .fv ol{flex-direction:column !important;gap:12px !important}
-  .fv ol > span{left:7px !important;right:auto !important;top:10px !important;bottom:10px !important;width:2px !important;height:auto !important;background:linear-gradient(180deg,rgba(200,16,46,.3),rgba(31,63,143,.8)) !important}
-  .fv li{flex-direction:row !important;align-items:baseline !important;text-align:left !important;gap:12px !important;flex:none !important}
-  .fv li > span:first-child{flex:0 0 auto;align-self:flex-start;margin-top:2px}
-  .fv strong{font-size:16px !important;flex:0 0 88px}
-  .fv li span:last-child{font-size:13px !important}
-  .fv > span{text-align:left !important;margin-top:10px !important}
-  .tl-sec.car.car{display:flex !important;flex-direction:column !important;overflow:visible !important;gap:22px !important;margin:0 !important;padding:8px 20px 10px 20px !important;position:relative;box-sizing:border-box;width:100% !important;max-width:100% !important}
+  .tl-sec.car.car{display:flex !important;flex-direction:column !important;overflow:visible !important;gap:24px !important;margin:0 !important;padding:6px 20px 24px !important;box-sizing:border-box;width:100% !important;max-width:100% !important}
   .tl-sec.car.car > *{flex:none !important;width:100% !important}
-  .tl-sec .tl-row{position:relative;overflow:visible !important}
-  .tl-sec .tl-row img{height:150px !important;border-radius:26px 26px 0 0 !important}
   .tl-sec + .car-dots{display:none !important}
-  .tl-sec.car.car > div:last-of-type{position:relative;z-index:5;background:#FBF7F0;margin:0 -20px !important;padding:34px 20px 10px !important;width:auto !important;max-width:none !important;box-shadow:0 -14px 30px rgba(27,43,75,.08);border-radius:28px 28px 0 0}
   .js-anim .fv li{opacity:.28;transform:translateX(-6px);transition:opacity .5s,transform .5s}
   .js-anim .fv li.lit{opacity:1;transform:none}
-  .tl-sec .tl-row{position:sticky !important;top:calc(64px + var(--i) * 46px) !important;box-shadow:0 -8px 24px rgba(27,43,75,.08) !important;border:1px solid #EFE6D8}
-  .tl-sec .tl-row::before{content:attr(data-step) "   " attr(data-when);order:-2;display:flex;align-items:center;height:46px;padding:0 20px;font:italic 400 17px Fraunces,Georgia,serif;color:#C8102E;white-space:pre;border-bottom:1px solid #F1E9DC;background:#FFFFFF;border-radius:26px 26px 0 0;flex:none}
-  .tl-sec .tl-row > div:has(> img){order:-1 !important}
-  .tl-sec .tl-row:nth-child(2){--i:0}.tl-sec .tl-row:nth-child(3){--i:1}.tl-sec .tl-row:nth-child(4){--i:2}
-  .tl-sec .tl-row img{height:96px !important;border-radius:0 !important}
-  .tl-sec .tl-row h3{font-size:24px !important}
-  .tl-sec .tl-row p{font-size:15px !important;line-height:1.5 !important}
-  .tl-sec .tl-row{gap:10px !important;padding-bottom:16px !important}
-  .tl-sec .fv{margin-top:4px !important;padding:12px 14px 10px !important}
-  .tl-sec .fv ol{gap:8px !important}
-  .tl-sec .fv li span:last-child{font-size:12px !important}
+  .tl-sec{--tab:42px;--h:404px;--t0:58px}
+  .tl-sec .tl-row,.tl-sec.car.car > div:last-of-type{position:sticky !important;top:calc(var(--t0) + var(--i) * var(--tab)) !important;height:var(--h) !important;min-height:0 !important;box-sizing:border-box;overflow:hidden !important;background:#FFFFFF !important;border:1px solid #EFE6D8;border-radius:24px !important;box-shadow:0 -10px 26px rgba(27,43,75,.09) !important;padding:0 0 16px !important;margin:0 !important;display:flex !important;flex-direction:column !important;gap:0 !important;align-items:stretch !important;text-align:left !important;width:100% !important;max-width:none !important}
+  .tl-sec .tl-row:nth-child(2){--i:0}.tl-sec .tl-row:nth-child(3){--i:1}.tl-sec .tl-row:nth-child(4){--i:2}.tl-sec.car.car > div:last-of-type{--i:3;z-index:5}
+  .tl-sec .tl-row::before,.tl-sec.car.car > div:last-of-type::before{content:attr(data-step) "   " attr(data-when);flex:0 0 var(--tab);display:flex;align-items:center;padding:0 18px;font:italic 400 16px Fraunces,Georgia,serif;color:#C8102E;white-space:pre;border-bottom:1px solid #F1E9DC;order:-2}
+  .tl-sec.car.car > div:last-of-type::before{content:"04   Kam taková cesta vede"}
+  .tl-sec .tl-row > div{padding:0 18px !important;text-align:left !important;align-items:flex-start !important;width:auto !important}
+  .tl-sec .tl-row > div:has(> img){position:absolute;top:calc(var(--tab) + 12px);right:16px;padding:0 !important;width:76px !important;height:76px}
+  .tl-sec .tl-row img{width:76px !important;height:76px !important;max-width:none !important;border-radius:50% !important;border:2px solid #C8102E;box-shadow:6px 0 0 -2px rgba(200,16,46,.25),12px 0 0 -4px rgba(200,16,46,.12);margin:0 !important}
+  .tl-sec .tl-row:nth-child(2) img{object-position:4% 18% !important}
+  .tl-sec .tl-row:nth-child(3) img{object-position:50% 22% !important}
+  .tl-sec .tl-row:nth-child(4) img{object-position:62% 38% !important}
   .tl-sec .tl-row > div > span:first-child{display:none !important}
+  .tl-sec .tl-row h3{font-size:23px !important;line-height:1.15 !important;margin-top:14px !important;padding-right:92px;min-height:68px}
+  .tl-sec .tl-row p{font-size:15px !important;line-height:1.5 !important;margin-top:10px !important}
+  .tl-sec .fv{margin-top:12px !important;padding:12px 12px 10px !important}
+  .tl-sec .fv ol{display:grid !important;grid-template-columns:1fr 1fr;gap:10px 12px !important}
+  .tl-sec .fv ol > span{display:none !important}
+  .tl-sec .fv li{gap:8px !important;align-items:flex-start !important}
+  .tl-sec .fv li > span:first-child{width:12px !important;height:12px !important;margin-top:4px}
+  .tl-sec .fv strong{flex:none !important;font-size:15px !important;display:block}
+  .tl-sec .fv li{display:grid !important;grid-template-columns:12px 1fr;column-gap:8px !important;row-gap:1px}
+  .tl-sec .fv li span:last-child{grid-column:2;font-size:11.5px !important;line-height:1.3 !important}
+  .tl-sec .fv > span{margin-top:8px !important;font-size:12px !important}
+  .tl-sec .fv li{justify-items:start !important;text-align:left !important;align-items:start !important}
+  .tl-sec .fv li > span:first-child{grid-column:1;grid-row:1 / span 2}
+  .tl-sec .fv strong{grid-column:2;grid-row:1;line-height:1.2}
+  .tl-sec .fv li span:last-child{grid-row:2}
+  .tl-sec .fv > span{text-align:left !important}
+  .tl-sec.car.car > div:last-of-type > *{padding:0 18px}
+  .tl-sec.car.car > div:last-of-type > span:first-child{display:none !important}
+  .tl-sec.car.car > div:last-of-type > span:nth-child(2){margin-top:22px}
+  .tl-sec.car.car > div:last-of-type{align-items:center !important;text-align:center !important;gap:10px !important}
+  .tl-sec.car.car{padding-bottom:28px !important}
   .m-cta{display:flex !important}
   .m-note{bottom:84px !important}
   body{padding-bottom:76px}
@@ -346,7 +353,7 @@ h1,h2,h3{font-family:Fraunces, Georgia, serif;font-weight:400}
 <div style="flex: 0 0 80px; display: flex; justify-content: center"><span style="width: 50px; height: 50px; border-radius: 50%; background: #C8102E; display: block; box-shadow: 0 0 0 10px rgba(200,16,46,0.12)"></span></div>
 <div style="flex: 1 1 0"></div>
 </div>
-<div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; margin-top: -8px; max-width: 720px; align-self: center">
+<div class="tl-goal" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; margin-top: -8px; max-width: 720px; align-self: center">
 <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #6B7080">Kam taková cesta vede</span>
 <span style="font-family: Fraunces, Georgia, serif; font-style: italic; font-size: 18px; color: #C8102E">Rok a půl · Tereza</span>
 <span style="font-family: Fraunces, Georgia, serif; font-size: 64px; line-height: 1; color: #1B2B4B">42°<span style="color: #C8102E; font-size: 0.6em; vertical-align: middle"> → </span>27°</span>
