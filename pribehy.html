@@ -405,7 +405,7 @@ document.addEventListener('click',function(e){
   if(!h||h.charAt(0)=='#'||/^(https?:|tel:|mailto:)/.test(h)||a.target=='_blank') return;
   document.querySelectorAll('[style*="view-transition-name"]').forEach(function(x){x.style.viewTransitionName=''});
   document.querySelectorAll('.ring img').forEach(function(x){x.style.viewTransitionName='none'});
-  if(h.indexOf('#')>-1) return;
+  if(h.indexOf('#')>-1 || /^(profil-|tomas\.html)/.test(h)) return;
   var img=a.querySelector('img');
   if(!img){ var p=a.closest('.dk-p'); if(p){ var d=document.querySelector('.dk[data-k="'+p.dataset.k+'"] img'); if(d) img=d; } }
   if(!img && a.id=='tm-p'){ var on=[].filter.call(document.querySelectorAll('.tm img'),function(i){return i.style.borderColor&&i.style.borderColor.indexOf('200')>-1})[0]||document.querySelector('.tm[data-k="pospisilova"] img'); img=on; }
