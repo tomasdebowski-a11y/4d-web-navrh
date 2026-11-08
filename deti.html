@@ -136,7 +136,7 @@ h1,h2,h3{font-family:Fraunces, Georgia, serif;font-weight:400}
   .v-note{padding:12px 20px 0 !important}
   .hero-u p[style*="font-size: 28px"]{font-size:21px !important}
   .hero-lg{padding-top:96px !important;gap:22px !important;position:relative;overflow:clip}
-  .hero-lg .lg{position:absolute;top:150px;right:-58px;width:185px !important;margin:0 !important;z-index:0}
+  .hero-lg .lg{--lw:clamp(150px,calc((100vw - 248px) / .79),200px);position:absolute;left:calc(236px + max(0px,(100vw - 248px - .79 * var(--lw)) / 2));top:calc(245px - var(--lw) * .432);width:var(--lw) !important;margin:0 !important;z-index:0}
   .hero-lg > div{position:relative;z-index:1}
   .hero-u.hero-lg h1{font-size:42px !important;max-width:230px !important}
   .hero-lg .eyebrow{max-width:240px}
