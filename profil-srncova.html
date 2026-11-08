@@ -194,6 +194,36 @@ h1,h2,h3{font-family:Fraunces, Georgia, serif;font-weight:400}
 .k-more{align-self:flex-start;margin-top:4px;border:1.5px solid #D9CFBF;background:#FFFFFF;border-radius:999px;padding:12px 20px;font:600 15px Inter,sans-serif;color:#1B2B4B;cursor:pointer}
 .car-dots button{width:8px;height:8px;border-radius:50%;border:0;padding:0;background:#D9CFBF;transition:all .2s}
 .car-dots button.on{width:22px;border-radius:4px;background:#C8102E}
+.burger{display:none}
+.mnav{display:none}
+@media (max-width: 760px){
+  .burger{display:flex;flex-direction:column;justify-content:center;gap:5px;width:46px;height:46px;margin-left:10px;border:1.5px solid #D9CFBF;border-radius:50%;background:#FFFFFF;padding:0 12px;cursor:pointer;position:relative;z-index:81;flex:0 0 auto}
+  .burger span{display:block;height:2px;border-radius:2px;background:#1B2B4B;transition:transform .3s,opacity .2s}
+  .mnav-open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .mnav-open .burger span:nth-child(2){opacity:0}
+  .mnav-open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  header > div{flex-wrap:nowrap !important}
+  header nav{margin-left:auto}
+  .mnav-open header{position:fixed !important;z-index:80 !important;left:0;right:0;top:0;background:transparent}
+  .mnav{display:block;position:fixed;inset:0;z-index:70;background:#FBF7F0;overflow-y:auto;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+  .mnav::before{content:"";position:absolute;right:-90px;top:120px;width:260px;height:260px;border-radius:50%;border:2px solid #C8102E;opacity:.12;box-shadow:-26px 0 0 -2px rgba(200,16,46,.08)}
+  .mnav-open .mnav{opacity:1;visibility:visible}
+  .mnav-open body{overflow:hidden}
+  .mnav-in{position:relative;padding:96px 24px 120px;display:flex;flex-direction:column;gap:22px}
+  .mnav-main{display:flex;flex-direction:column}
+  .mnav-main a{font:400 32px/1.15 Fraunces,Georgia,serif;color:#1B2B4B;text-decoration:none;padding:9px 0;border-bottom:1px solid #EFE6D8;transform:translateY(8px);opacity:0;transition:transform .45s cubic-bezier(.2,.8,.2,1),opacity .45s}
+  .mnav-open .mnav-main a{transform:none;opacity:1}
+  .mnav-main a:nth-child(2){transition-delay:.04s}.mnav-main a:nth-child(3){transition-delay:.08s}.mnav-main a:nth-child(4){transition-delay:.12s}.mnav-main a:nth-child(5){transition-delay:.16s}.mnav-main a:nth-child(6){transition-delay:.2s}.mnav-main a:nth-child(7){transition-delay:.24s}
+  .mnav a.on{color:#C8102E}
+  .mnav-lb{font:italic 400 17px Fraunces,Georgia,serif;color:#C8102E;margin-top:8px}
+  .mnav-sv{display:flex;flex-wrap:wrap;gap:8px}
+  .mnav-sv a{font:500 15px Inter,sans-serif;color:#1B2B4B;text-decoration:none;padding:9px 14px;border:1.5px solid #D9CFBF;border-radius:999px;background:#FFFFFF}
+  .mnav-sv a.on{border-color:#C8102E}
+  .mnav-ft{display:flex;flex-direction:column;gap:10px;margin-top:10px;font:15px Inter,sans-serif;color:#6B7080}
+  .mnav-ft a{color:#1B2B4B;font-weight:600}
+  .mnav-ft a.mnav-cta{display:flex;align-items:center;justify-content:center;min-height:52px;background:#C8102E;color:#FFFFFF;text-decoration:none;border-radius:999px;font-size:17px;margin-bottom:6px}
+  .mnav-open .m-cta,.mnav-open .m-note{display:none !important}
+}
 .m-cta{display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:12px 16px 16px;background:#FFFFFF;border-top:1px solid #E6DDCD;box-shadow:0 -6px 18px rgba(27,43,75,.08)}
 .m-cta a{flex:1;display:flex;align-items:center;justify-content:center;min-height:50px;background:#C8102E;color:#fff;text-decoration:none;font:600 17px Inter,sans-serif;border-radius:999px}
 </style></head><body>
@@ -201,13 +231,13 @@ h1,h2,h3{font-family:Fraunces, Georgia, serif;font-weight:400}
 <div style="width: 100%; background: #FBF7F0">
 <header><div style="max-width: 1280px; margin: 0 auto; padding: 22px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap">
 <a href="index.html" style="display: flex"><img src="img/95823f2a-logo-4d-na-sirku-barevne.svg" alt="4D Fyzioterapie" style="height: 46px; width: auto; display: block"></a>
-<nav aria-label="Hlavní menu" style="display: flex; gap: 26px; font-size: 15px; align-items: center; flex-wrap: wrap"><a href="index.html" style="color: #2A2F3A; text-decoration: none">Úvod</a><a href="deti.html" style="color: #2A2F3A; text-decoration: none">Komu pomáháme</a><a href="tym.html" style="color: #C8102E; text-decoration: none">Kdo jsme</a><a href="diagnostika.html" style="color: #2A2F3A; text-decoration: none">Diagnostika</a><a href="pribehy.html" style="color: #2A2F3A; text-decoration: none">Příběhy</a><a href="cenik.html" style="color: #2A2F3A; text-decoration: none">Ceník</a><a href="kontakt.html" style="color: #2A2F3A; text-decoration: none">Kontakt</a>
+<nav aria-label="Hlavní menu" style="display: flex; gap: 26px; font-size: 15px; align-items: center; flex-wrap: wrap"><a href="index.html" style="color: #2A2F3A; text-decoration: none">Úvod</a><a href="index.html#sluzby" style="color: #2A2F3A; text-decoration: none">Komu pomáháme</a><a href="tym.html" style="color: #C8102E; text-decoration: none">Kdo jsme</a><a href="diagnostika.html" style="color: #2A2F3A; text-decoration: none">Diagnostika</a><a href="pribehy.html" style="color: #2A2F3A; text-decoration: none">Příběhy</a><a href="cenik.html" style="color: #2A2F3A; text-decoration: none">Ceník</a><a href="kontakt.html" style="color: #2A2F3A; text-decoration: none">Kontakt</a>
 <a href="#objednat" style="background: #C8102E; color: #FFFFFF; text-decoration: none; font-weight: 600; padding: 11px 20px; border-radius: 999px">Objednat se</a></nav></div></header>
 <section class="hero-s" style="max-width: 1280px; margin: 0 auto; padding: 40px 32px 88px; display: flex; flex-wrap: wrap; gap: 64px; align-items: center">
 <span class="ring" style="position: relative; width: 380px; height: 380px; display: block; flex: 0 0 auto">
 <span aria-hidden="true" style="position: absolute; inset: 0; border-radius: 50%; border: 2px solid #C8102E; transform: translateX(36px); opacity: 0.2"></span>
 <span aria-hidden="true" style="position: absolute; inset: 0; border-radius: 50%; border: 2px solid #C8102E; transform: translateX(18px); opacity: 0.45"></span>
-<img src="img/tym-srncova.jpg" alt="" style="position: absolute; inset: 0; width: 380px; height: 380px; border-radius: 50%; object-fit: cover; object-position: 50% 15%; border: 3px solid #C8102E">
+<img src="img/tym-srncova.jpg" alt="" style="position: absolute; inset: 0; width: 380px; height: 380px; border-radius: 50%; object-fit: cover; object-position: 50% 0%; border: 3px solid #C8102E">
 </span>
 <div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
 <nav aria-label="Drobečková navigace" style="font-size: 14px; color: #6B7080"><a href="index.html">Úvod</a> / <a href="tym.html">Kdo jsme</a> / Dominika Srncová</nav>
@@ -220,7 +250,7 @@ h1,h2,h3{font-family:Fraunces, Georgia, serif;font-weight:400}
 <section style="background: #FFFFFF"><div style="max-width: 900px; margin: 0 auto; padding: 88px 32px; display: flex; flex-direction: column; gap: 18px">
 <span style="font-family: Fraunces, Georgia, serif; font-style: italic; font-size: 18px; color: #C8102E">O Dominice</span>
 <p style="margin: 0; font-size: 19px; line-height: 1.75; color: #2A2F3A">Ve Vojenské nemocnici Brno se setkává s pacienty v akutním i chronickém stádiu onemocnění, s nejrůznějšími ortopedickými i neurologickými diagnózami.</p><p style="margin: 0; font-size: 19px; line-height: 1.75; color: #2A2F3A">Specializuje se na potíže temporomandibulárního (čelistního) kloubu a orofaciální oblasti a na vestibulární rehabilitaci při závratích. Několik let praktikuje jógu, kterou při zájmu využívá i v terapii.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 10px"><span style="font-family: Fraunces, Georgia, serif; font-size: 19px; color: #1B2B4B; margin-right: 6px">S čím vám pomůže:</span><a href="dospeli.html" style="font-size: 15px; color: #1B2B4B; text-decoration: none; padding: 10px 18px; border-radius: 999px; border: 1.5px solid #D9CFBF; background: #FFFFFF">Záda a klouby</a><a href="dospeli.html#uraz" style="font-size: 15px; color: #1B2B4B; text-decoration: none; padding: 10px 18px; border-radius: 999px; border: 1.5px solid #D9CFBF; background: #FFFFFF">Po těžkém úrazu</a></div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 10px"><span style="font-family: Fraunces, Georgia, serif; font-size: 19px; color: #1B2B4B; margin-right: 6px">S čím vám pomůže:</span><a href="tmk.html" style="font-size: 15px; color: #1B2B4B; text-decoration: none; padding: 10px 18px; border-radius: 999px; border: 1.5px solid #D9CFBF; background: #FFFFFF">Čelistní kloub</a><a href="dospeli.html" style="font-size: 15px; color: #1B2B4B; text-decoration: none; padding: 10px 18px; border-radius: 999px; border: 1.5px solid #D9CFBF; background: #FFFFFF">Záda a klouby</a><a href="dospeli.html#uraz" style="font-size: 15px; color: #1B2B4B; text-decoration: none; padding: 10px 18px; border-radius: 999px; border: 1.5px solid #D9CFBF; background: #FFFFFF">Po těžkém úrazu</a></div>
 </div></section>
 
 <section style="max-width: 1280px; margin: 0 auto; padding: 88px 32px; display: flex; flex-direction: column; gap: 40px">
@@ -293,6 +323,23 @@ document.querySelectorAll('.dk-line').forEach(function(line){
       im.style.width=im.style.height=(on?96:76)+'px'; im.style.borderColor=on?'#C8102E':'#FBF7F0'; t.style.color=on?'#C8102E':'#1B2B4B'});
   })});
 });
+
+(function(){
+  var hd=document.querySelector('header'); if(!hd) return; var nav=hd.querySelector('nav'); var wrap=hd.firstElementChild;
+  var b=document.createElement('button'); b.className='burger'; b.setAttribute('aria-label','Otevřít menu'); b.setAttribute('aria-expanded','false'); b.innerHTML='<span></span><span></span><span></span>';
+  wrap.appendChild(b);
+  var links=[].filter.call(nav.querySelectorAll('a'),function(a){return !/Objednat|Úvod/.test(a.textContent)});
+  var here=location.pathname.split('/').pop()||'index.html';
+  var main='<a href="index.html"'+(here=='index.html'?' class="on"':'')+'>Úvod</a>'+links.map(function(a){var h=a.getAttribute('href'); if(h=='#sluzby') h='index.html#sluzby'; return '<a href="'+h+'"'+(h==here?' class="on"':'')+'>'+a.textContent+'</a>'}).join('');
+  var S=[['miminka.html','Miminka'],['deti.html','Děti'],['dospeli.html','Záda a klouby'],['sport.html','Sportovci'],['zeny.html','Péče o ženy'],['skolioza.html','Skolióza'],['dech.html','Dech'],['tmk.html','Čelistní kloub'],['ruka.html','Ruka a prsty'],['laser.html','MLS laser']];
+  var o=document.createElement('div'); o.className='mnav'; o.setAttribute('aria-hidden','true');
+  o.innerHTML='<div class="mnav-in"><nav class="mnav-main">'+main+'</nav><div class="mnav-lb">Komu pomáháme</div><div class="mnav-sv">'+S.map(function(x){return '<a href="'+x[0]+'"'+(x[0]==here?' class="on"':'')+'>'+x[1]+'</a>'}).join('')+'</div><div class="mnav-ft"><a class="mnav-cta" href="https://4d-fyzioterapie.reservio.com" target="_blank" rel="noopener">Objednat se online</a><a href="tel:+420775991485">+420 775 991 485</a><span>Masarykova 37, Brno · Po–Pá 8–19</span></div></div>';
+  document.body.appendChild(o);
+  function set(on){document.documentElement.classList.toggle('mnav-open',on); b.setAttribute('aria-expanded',on?'true':'false'); b.setAttribute('aria-label',on?'Zavřít menu':'Otevřít menu'); o.setAttribute('aria-hidden',on?'false':'true');}
+  b.addEventListener('click',function(){set(!document.documentElement.classList.contains('mnav-open'))});
+  o.addEventListener('click',function(e){if(e.target.closest('a')) set(false)});
+  document.addEventListener('keydown',function(e){if(e.key=='Escape') set(false)});
+})();
 document.querySelectorAll('.kurzy').forEach(function(k){
   var n=k.querySelectorAll('.k2 li').length; var b=document.createElement('button'); b.className='k-more'; b.textContent='Zobrazit další kurzy ('+n+')';
   b.onclick=function(){k.classList.add('open')}; k.parentNode.insertBefore(b,k.nextSibling);
