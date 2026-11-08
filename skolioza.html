@@ -358,6 +358,7 @@ document.querySelectorAll('.tabs-s').forEach(function(t){
     b.onclick=function(){panes.forEach(function(x){x.classList.remove('on')}); [].forEach.call(sw.children,function(x){x.classList.remove('on')}); p.classList.add('on'); b.classList.add('on')};
     if(i==0){p.classList.add('on'); b.classList.add('on')} sw.appendChild(b)});
   t.insertBefore(sw,t.firstChild);
+  var hid=location.hash.slice(1); if(hid){ var k=panes.findIndex(function(p){return p.id==hid}); if(k>-1){ sw.children[k].click(); setTimeout(function(){ (window.matchMedia('(max-width: 760px)').matches?t:panes[k]).scrollIntoView({block:'start'}); window.scrollBy(0,-70); },60); } }
 });
 document.querySelectorAll('.dk-line').forEach(function(line){
   var root=line.parentNode, links=line.querySelectorAll('.dk');
@@ -396,6 +397,7 @@ document.addEventListener('click',function(e){
   if(!h||h.charAt(0)=='#'||/^(https?:|tel:|mailto:)/.test(h)||a.target=='_blank') return;
   document.querySelectorAll('[style*="view-transition-name"]').forEach(function(x){x.style.viewTransitionName=''});
   document.querySelectorAll('.ring img').forEach(function(x){x.style.viewTransitionName='none'});
+  if(h.indexOf('#')>-1) return;
   var img=a.querySelector('img');
   if(!img){ var p=a.closest('.dk-p'); if(p){ var d=document.querySelector('.dk[data-k="'+p.dataset.k+'"] img'); if(d) img=d; } }
   if(!img && a.id=='tm-p'){ var on=[].filter.call(document.querySelectorAll('.tm img'),function(i){return i.style.borderColor&&i.style.borderColor.indexOf('200')>-1})[0]||document.querySelector('.tm[data-k="pospisilova"] img'); img=on; }
