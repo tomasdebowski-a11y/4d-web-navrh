@@ -292,7 +292,9 @@ h1,h2,h3{font-family:Fraunces, Georgia, serif;font-weight:400}
 <img src="img/tym-janousek.jpg" alt="David Janoušek" style="width: 76px; height: 76px; border-radius: 50%; object-fit: cover; object-position: top; border: 3px solid #FBF7F0; background: #FFFFFF">
 <span style="font-family: Fraunces, Georgia, serif; font-size: 17px; color: #1B2B4B">David</span></a><a href="#" class="dk" data-k="brachova" style="display: flex; flex-direction: column; align-items: center; gap: 8px; text-decoration: none; position: relative; z-index: 1">
 <img src="img/tym-brachova.jpg" alt="Andrea Brachová" style="width: 76px; height: 76px; border-radius: 50%; object-fit: cover; object-position: top; border: 3px solid #FBF7F0; background: #FFFFFF">
-<span style="font-family: Fraunces, Georgia, serif; font-size: 17px; color: #1B2B4B">Andrea</span></a></div>
+<span style="font-family: Fraunces, Georgia, serif; font-size: 17px; color: #1B2B4B">Andrea</span></a><a href="#" class="dk" data-k="sancova" style="display: flex; flex-direction: column; align-items: center; gap: 8px; text-decoration: none; position: relative; z-index: 1">
+<img src="img/tym-sancova.jpg" alt="Lucie Šancová" style="width: 76px; height: 76px; border-radius: 50%; object-fit: cover; object-position: top; border: 3px solid #FBF7F0; background: #FFFFFF">
+<span style="font-family: Fraunces, Georgia, serif; font-size: 17px; color: #1B2B4B">Lucie</span></a></div>
 <div class="dk-p" data-k="debowski" style="display: none; flex-wrap: wrap; gap: 32px; align-items: center; padding-top: 28px; border-top: 1px solid #E6DDCD">
 <div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
 <span style="font-family: Fraunces, Georgia, serif; font-size: 28px; color: #1B2B4B">Tomáš Debowski</span>
@@ -317,6 +319,12 @@ h1,h2,h3{font-family:Fraunces, Georgia, serif;font-weight:400}
 <span style="font-size: 15px; color: #6B7080">Dech a ortopedické potíže dětí · Dětská nemocnice Brno</span>
 <span style="font-family: Fraunces, Georgia, serif; font-size: 22px; line-height: 1.45; color: #1B2B4B">„Dech je jeden z nejdůležitějších diagnostických nástrojů.“</span><div style="display: flex; flex-direction: column; gap: 6px; border: 1.5px dashed #D9CFBF; border-radius: 14px; padding: 12px 16px; margin-top: 10px"><span style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #C8102E">Co říkají rodiče</span><span style="font-size: 14px; color: #8A8F9C">[místo pro skutečnou recenzi rodiče se souhlasem – doplníme]</span></div></div>
 <div style="display: flex; gap: 12px; flex-wrap: wrap"><a href="https://4d-fyzioterapie.reservio.com" target="_blank" rel="noopener" style="background: #1B2B4B; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px; padding: 13px 22px; border-radius: 999px">Objednat se k Andree</a><a href="profil-brachova.html" style="color: #1B2B4B; font-weight: 600; font-size: 15px; padding: 12px 6px">Celý profil →</a></div>
+</div><div class="dk-p" data-k="sancova" style="display: none; flex-wrap: wrap; gap: 32px; align-items: center; padding-top: 28px; border-top: 1px solid #E6DDCD">
+<div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: Fraunces, Georgia, serif; font-size: 28px; color: #1B2B4B">Lucie Šancová</span>
+<span style="font-size: 15px; color: #6B7080">Starší děti · úrazy a přetížení, ruka a dech</span>
+<span style="font-family: Fraunces, Georgia, serif; font-size: 22px; line-height: 1.45; color: #1B2B4B">„Baví mě hledat skutečné příčiny bolesti.“</span><div style="display: flex; flex-direction: column; gap: 6px; border: 1.5px dashed #D9CFBF; border-radius: 14px; padding: 12px 16px; margin-top: 10px"><span style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #C8102E">Co říkají rodiče</span><span style="font-size: 14px; color: #8A8F9C">[místo pro skutečnou recenzi rodiče se souhlasem – doplníme]</span></div></div>
+<div style="display: flex; gap: 12px; flex-wrap: wrap"><a href="https://4d-fyzioterapie.reservio.com" target="_blank" rel="noopener" style="background: #1B2B4B; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px; padding: 13px 22px; border-radius: 999px">Objednat se k Lucii</a><a href="profil-sancova.html" style="color: #1B2B4B; font-weight: 600; font-size: 15px; padding: 12px 6px">Celý profil →</a></div>
 </div>
 </div></section>
 
@@ -374,7 +382,7 @@ document.querySelectorAll('.dk-line').forEach(function(line){
   var links=[].filter.call(nav.querySelectorAll('a'),function(a){return !/Objednat|Úvod/.test(a.textContent)});
   var here=location.pathname.split('/').pop()||'index.html';
   var main='<a href="index.html"'+(here=='index.html'?' class="on"':'')+'>Úvod</a>'+links.map(function(a){var h=a.getAttribute('href'); if(h=='#sluzby') h='index.html#sluzby'; return '<a href="'+h+'"'+(h==here?' class="on"':'')+'>'+a.textContent+'</a>'}).join('');
-  var S=[['miminka.html','Miminka'],['deti.html','Děti'],['dospeli.html','Záda a klouby'],['sport.html','Sportovci'],['zeny.html','Péče o ženy'],['skolioza.html','Skolióza'],['dech.html','Dech'],['tmk.html','Čelistní kloub'],['ruka.html','Ruka a prsty'],['laser.html','MLS laser']];
+  var S=[['deti.html','Děti a miminka'],['dospeli.html','Záda a klouby'],['sport.html','Sportovci'],['zeny.html','Péče o ženy'],['skolioza.html','Skolióza'],['dech.html','Dech'],['tmk.html','Čelistní kloub'],['ruka.html','Ruka a prsty'],['laser.html','MLS laser']];
   var o=document.createElement('div'); o.className='mnav'; o.setAttribute('aria-hidden','true');
   o.innerHTML='<div class="mnav-in"><nav class="mnav-main">'+main+'</nav><div class="mnav-lb">Komu pomáháme</div><div class="mnav-sv">'+S.map(function(x){return '<a href="'+x[0]+'"'+(x[0]==here?' class="on"':'')+'>'+x[1]+'</a>'}).join('')+'</div><div class="mnav-ft"><a class="mnav-cta" href="https://4d-fyzioterapie.reservio.com" target="_blank" rel="noopener">Objednat se online</a><a href="tel:+420775991485">+420 775 991 485</a><span>Masarykova 37, Brno · Po–Pá 8–19</span></div></div>';
   document.body.appendChild(o);
