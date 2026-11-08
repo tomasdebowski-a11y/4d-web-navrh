@@ -7,6 +7,14 @@ a{color:#1F3F8F}a:hover{color:#C8102E}
 h1,h2,h3{font-family:Fraunces, Georgia, serif;font-weight:400}
 </style>
 <style>
+@view-transition{navigation:auto}
+.ring img{view-transition-name:vt-hero}
+header{view-transition-name:site-hdr}
+.m-cta{view-transition-name:m-cta}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.35s}
+::view-transition-group(vt-hero){animation-duration:.62s;animation-timing-function:cubic-bezier(.2,.8,.2,1)}
+::view-transition-old(vt-hero),::view-transition-new(vt-hero){animation-duration:.62s;height:100%;object-fit:cover}
+@media (prefers-reduced-motion: reduce){@view-transition{navigation:none}}
 h1,h2,h3,blockquote,[style*="Fraunces"]{font-variation-settings:"SOFT" 0,"WONK" 0,"opsz" 72}
 h1,h2,h1 *,h2 *{font-variation-settings:"SOFT" 0,"WONK" 0,"opsz" 96}
 @media (max-width: 760px){
@@ -273,20 +281,55 @@ h1,h2,h1 *,h2 *{font-variation-settings:"SOFT" 0,"WONK" 0,"opsz" 96}
 <ul style="margin: 4px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px"><li style="display: flex; gap: 12px; font-size: 15px; line-height: 1.5; color: #2A2F3A"><span aria-hidden="true" style="flex: 0 0 auto; width: 10px; height: 10px; border-radius: 50%; border: 2px solid #1F3F8F; margin-top: 6px"></span>rozložení váhy vlevo a vpravo</li><li style="display: flex; gap: 12px; font-size: 15px; line-height: 1.5; color: #2A2F3A"><span aria-hidden="true" style="flex: 0 0 auto; width: 10px; height: 10px; border-radius: 50%; border: 2px solid #1F3F8F; margin-top: 6px"></span>přetížená místa chodidla</li><li style="display: flex; gap: 12px; font-size: 15px; line-height: 1.5; color: #2A2F3A"><span aria-hidden="true" style="flex: 0 0 auto; width: 10px; height: 10px; border-radius: 50%; border: 2px solid #1F3F8F; margin-top: 6px"></span>plochá noha, nestabilní kotníky</li></ul>
 </div></div>
 </div></section>
+<style>
+.fx{max-width: 1280px; margin: 0 auto; padding: 96px 32px 40px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0 80px}
+.fx-head{grid-column: 1 / -1; display: flex; flex-direction: column; gap: 10px; max-width: 760px; margin-bottom: 24px}
+.fx-stage{position: sticky; top: 12vh; height: 76vh; display: flex; align-items: center; justify-content: center}
+.fx-ring{position: relative; width: min(460px, 100%); aspect-ratio: 1}
+.fx-ring::before, .fx-ring::after{content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid #C8102E; transition: transform .8s cubic-bezier(.2,.8,.2,1)}
+.fx-ring::before{transform: translateX(var(--t1, 18px)); opacity: .45}
+.fx-ring::after{transform: translateX(var(--t2, 36px)); opacity: .2}
+.fx[data-a="1"] .fx-ring{--t1: 22px; --t2: 44px} .fx[data-a="2"] .fx-ring{--t1: 26px; --t2: 52px}
+.fx-clip{position: absolute; inset: 0; border-radius: 50%; overflow: hidden; border: 3px solid #C8102E; background: #0E1320; z-index: 1}
+.fx-i{position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.08); transition: opacity .7s ease, transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.fx-i[data-i="0"]{opacity: 1; transform: none}
+.fx[data-a] .fx-i[data-i="0"]{opacity: 0; transform: scale(1.08)}
+.fx[data-a="0"] .fx-i[data-i="0"], .fx[data-a="1"] .fx-i[data-i="1"], .fx[data-a="2"] .fx-i[data-i="2"]{opacity: 1; transform: none}
+.fx-scan{position: absolute; inset: 0; z-index: 2; pointer-events: none; background: repeating-linear-gradient(180deg, rgba(255,236,200,.0) 0 7px, rgba(255,236,200,.38) 7px 9px); mix-blend-mode: screen; opacity: 1; transition: opacity .6s; animation: fxScan 2.4s linear infinite; border-radius: 50%}
+.fx[data-a="1"] .fx-scan, .fx[data-a="2"] .fx-scan{opacity: 0}
+@keyframes fxScan{from{background-position: 0 0} to{background-position: 0 36px}}
+.fx-dots{position: absolute; left: 50%; bottom: -34px; transform: translateX(-50%); display: flex; gap: 8px; z-index: 3}
+.fx-dots i{width: 8px; height: 8px; border-radius: 50%; background: #D9CFBF; transition: all .3s}
+.fx:not([data-a]) .fx-dots i:first-child, .fx[data-a="0"] .fx-dots i:nth-child(1), .fx[data-a="1"] .fx-dots i:nth-child(2), .fx[data-a="2"] .fx-dots i:nth-child(3){width: 22px; border-radius: 4px; background: #C8102E}
+.fx-steps{display: flex; flex-direction: column}
+.fx-step{min-height: 72vh; display: flex; flex-direction: column; justify-content: center; gap: 12px; opacity: .3; transition: opacity .5s}
+.fx-step.on, .fx:not([data-a]) .fx-step{opacity: 1}
+.fx-n{font-family: Fraunces, Georgia, serif; font-style: italic; font-size: 18px; color: #C8102E}
+.fx-step h3{margin: 0; font-size: 44px; line-height: 1.1; color: #1B2B4B}
+.fx-step p{margin: 0; font-size: 19px; line-height: 1.6; color: #4A5060; max-width: 480px}
+@media (prefers-reduced-motion: reduce){.fx-scan{animation: none} .fx-i, .fx-ring::before, .fx-ring::after{transition: none}}
+@media (max-width: 760px){
+ .fx{display: block; padding: 56px 20px 24px !important}
+ .fx-stage{top: 64px; height: 236px; z-index: 2; background: linear-gradient(#FBF7F0 84%, rgba(251,247,240,0))}
+ .fx-ring{width: 180px}
+ .fx-dots{bottom: -22px}
+ .fx-step{min-height: 0; justify-content: flex-start; padding: 26px 0 90px}
+ .fx-last{min-height: 0 !important; padding-bottom: 40px}
+ .fx-step h3{font-size: 32px} .fx-step p{font-size: 17px}
+}
+</style>
+<section class="fx" aria-label="Jak funguje Formetric 4D">
+<div class="fx-head"><span style="font-family: Fraunces, Georgia, serif; font-style: italic; font-size: 18px; color: #C8102E">Formetric 4D · krok za krokem</span>
+<h2 style="margin: 0; font-size: 48px; line-height: 1.1; color: #1B2B4B">Jak světlo přečte vaše záda</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #4A5060">Posouvejte stránku a projděte si vyšetření tak, jak ho uvidíte u nás.</p></div>
+<div class="fx-stage"><div class="fx-ring"><div class="fx-clip"><img class="fx-i" data-i="0" src="img/fx-zada.jpg" alt="" loading="lazy"><img class="fx-i" data-i="1" src="img/fx-mapa.jpg" alt="" loading="lazy"><img class="fx-i" data-i="2" src="img/fx-pater.jpg" alt="" loading="lazy"><span class="fx-scan"></span></div><span class="fx-dots"><i></i><i></i><i></i></span></div></div>
+<div class="fx-steps"><div class="fx-step" data-i="0"><span class="fx-n">01</span><h3>Světelný rastr</h3><p>Na záda se promítnou světelné pruhy a kamera z jejich ohybu přečte tvar zad – tisíce bodů za pár vteřin. Žádné rentgenové záření, nic nebolí, proto je vyšetření vhodné i pro děti.</p></div><div class="fx-step" data-i="1"><span class="fx-n">02</span><h3>Svalová balance</h3><p>Barvy na zádech ukazují svalovou balanci a dysbalanci – kde tělo pracuje souměrně a kde jedna strana přebírá víc práce než druhá.</p></div><div class="fx-step" data-i="2"><span class="fx-n">03</span><h3>Páteř ve 3D</h3><p>Z povrchu zad dopočítáme 3D model páteře: její křivku, natočení obratlů i postavení pánve. Projdeme ho spolu na obrazovce a vysvětlíme, co znamená.</p></div><div class="fx-step fx-last" data-i="2" style="min-height: 30vh; opacity: 1"><p style="font-size: 16px; color: #6B7080">Měření můžeme opakovat a porovnávat v čase – uvidíte, jak se záda během terapie mění.</p></div></div>
+</section>
 <section style="max-width: 1280px; margin: 0 auto; padding: 96px 32px; display: flex; flex-direction: column; gap: 88px">
 <div style="display: flex; flex-direction: column; gap: 10px; max-width: 760px"><span style="font-family: Fraunces, Georgia, serif; font-style: italic; font-size: 18px; color: #C8102E">Co uvidíte vy</span>
 <h2 style="margin: 0; font-size: 48px; line-height: 1.1; color: #1B2B4B">Žádná tajemná čísla</h2>
 <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #4A5060">Výsledky nezůstávají v počítači. Projdeme je s vámi a vysvětlíme, co znamenají pro vaše tělo a pro další postup.</p></div>
-<div class="tabs-s figs" style="display: flex; flex-direction: column; gap: 88px"><div class="fig" data-tab="Formetric 4D" style="display: flex; flex-wrap: wrap-reverse; gap: 48px; align-items: center">
-<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
-<span style="font-family: Fraunces, Georgia, serif; font-style: italic; font-size: 18px; color: #C8102E">Formetric 4D · ukázka</span>
-<h3 style="margin: 0; font-size: 36px; line-height: 1.15; color: #1B2B4B">Vaše páteř na obrazovce, srozumitelně</h3>
-<ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 18px"><li style="display: flex; gap: 14px; align-items: flex-start"><span style="flex: 0 0 auto; width: 30px; height: 30px; border-radius: 50%; background: #C8102E; color: #FFFFFF; font: 600 14px Inter, sans-serif; display: flex; align-items: center; justify-content: center">1</span><span style="display: flex; flex-direction: column; gap: 4px"><strong style="font-family: Fraunces, Georgia, serif; font-weight: 400; font-size: 21px; color: #1B2B4B">Světelný rastr</strong><span style="font-size: 15px; line-height: 1.55; color: #4A5060">Na záda se promítne světelný rastr a kamera z něj přečte tvar zad. Žádné rentgenové záření, nic nebolí – proto je vyšetření vhodné i pro děti.</span></span></li><li style="display: flex; gap: 14px; align-items: flex-start"><span style="flex: 0 0 auto; width: 30px; height: 30px; border-radius: 50%; background: #C8102E; color: #FFFFFF; font: 600 14px Inter, sans-serif; display: flex; align-items: center; justify-content: center">2</span><span style="display: flex; flex-direction: column; gap: 4px"><strong style="font-family: Fraunces, Georgia, serif; font-weight: 400; font-size: 21px; color: #1B2B4B">Páteř ve 3D a svalová balance</strong><span style="font-size: 15px; line-height: 1.55; color: #4A5060">Uvidíte 3D model své páteře a její křivku. Barvy na zádech ukazují svalovou balanci a dysbalanci – kde svaly pracují souměrně a kde ne. Spolu to projdeme a vysvětlíme.</span></span></li><li style="display: flex; gap: 14px; align-items: flex-start"><span style="flex: 0 0 auto; width: 30px; height: 30px; border-radius: 50%; background: #C8102E; color: #FFFFFF; font: 600 14px Inter, sans-serif; display: flex; align-items: center; justify-content: center">3</span><span style="display: flex; flex-direction: column; gap: 4px"><strong style="font-family: Fraunces, Georgia, serif; font-weight: 400; font-size: 21px; color: #1B2B4B">Porovnání v čase</strong><span style="font-size: 15px; line-height: 1.55; color: #4A5060">Měření můžeme opakovat a ukládat. Uvidíte vedle sebe, jak se záda mění během terapie.</span></span></li></ol>
-</div>
-<div style="flex: 1 1 440px; min-width: 0; position: relative">
-<img src="img/formetric.jpg" alt="Vyšetření na přístroji Formetric 4D" style="width: 100%; height: 420px; object-fit: cover; object-position: 50% 50%; display: block; border-radius: 999px 999px 28px 28px">
-<span aria-hidden="true" style="position: absolute; left: 47%; top: 22%; transform: translate(-50%, -50%); width: 30px; height: 30px; border-radius: 50%; background: #C8102E; color: #FFFFFF; font: 600 14px Inter, sans-serif; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 5px rgba(255,255,255,0.75)">1</span><span aria-hidden="true" style="position: absolute; left: 53%; top: 70%; transform: translate(-50%, -50%); width: 30px; height: 30px; border-radius: 50%; background: #C8102E; color: #FFFFFF; font: 600 14px Inter, sans-serif; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 5px rgba(255,255,255,0.75)">2</span><span aria-hidden="true" style="position: absolute; left: 37%; top: 60%; transform: translate(-50%, -50%); width: 30px; height: 30px; border-radius: 50%; background: #C8102E; color: #FFFFFF; font: 600 14px Inter, sans-serif; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 5px rgba(255,255,255,0.75)">3</span></div></div>
-<div class="fig" data-tab="Matscan" style="display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+<div class="figs" style="display: flex; flex-direction: column; gap: 88px"><div class="fig" data-tab="Matscan" style="display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
 <div style="flex: 1 1 440px; min-width: 0; position: relative; background: #FFFFFF; border-radius: 28px; padding: 18px">
 <div style="position: relative"><img src="img/matscan-vystup.jpg" alt="Ukázka výstupu z tlakové desky Matscan" style="width: 100%; height: auto; display: block; border-radius: 12px">
 <span aria-hidden="true" style="position: absolute; left: 23%; top: 77%; transform: translate(-50%, -50%); width: 30px; height: 30px; border-radius: 50%; background: #C8102E; color: #FFFFFF; font: 600 14px Inter, sans-serif; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 5px rgba(255,255,255,0.75)">1</span><span aria-hidden="true" style="position: absolute; left: 33%; top: 89%; transform: translate(-50%, -50%); width: 30px; height: 30px; border-radius: 50%; background: #1F3F8F; color: #FFFFFF; font: 600 14px Inter, sans-serif; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 5px rgba(255,255,255,0.75)">2</span><span aria-hidden="true" style="position: absolute; left: 69%; top: 54%; transform: translate(-50%, -50%); width: 30px; height: 30px; border-radius: 50%; background: #C8102E; color: #FFFFFF; font: 600 14px Inter, sans-serif; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 5px rgba(255,255,255,0.75)">3</span></div></div>
@@ -391,6 +434,24 @@ document.querySelectorAll('.dk-line').forEach(function(line){
   o.addEventListener('click',function(e){if(e.target.closest('a')) set(false)});
   document.addEventListener('keydown',function(e){if(e.key=='Escape') set(false)});
 })();
+
+document.querySelectorAll('.fx').forEach(function(fx){
+  var steps=fx.querySelectorAll('.fx-step');
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ var i=e.target.getAttribute('data-i'); fx.setAttribute('data-a',i); steps.forEach(function(s){s.classList.toggle('on',s===e.target)}); } })},{rootMargin: matchMedia('(max-width: 760px)').matches ? '-76% 0px -23% 0px' : '-45% 0px -45% 0px'});
+  steps.forEach(function(s){io.observe(s)});
+});
+
+document.addEventListener('click',function(e){
+  var a=e.target.closest('a[href]'); if(!a) return; var h=a.getAttribute('href');
+  if(!h||h.charAt(0)=='#'||/^(https?:|tel:|mailto:)/.test(h)||a.target=='_blank') return;
+  document.querySelectorAll('[style*="view-transition-name"]').forEach(function(x){x.style.viewTransitionName=''});
+  document.querySelectorAll('.ring img').forEach(function(x){x.style.viewTransitionName='none'});
+  var img=a.querySelector('img');
+  if(!img){ var p=a.closest('.dk-p'); if(p){ var d=document.querySelector('.dk[data-k="'+p.dataset.k+'"] img'); if(d) img=d; } }
+  if(!img && a.id=='tm-p'){ var on=[].filter.call(document.querySelectorAll('.tm img'),function(i){return i.style.borderColor&&i.style.borderColor.indexOf('200')>-1})[0]||document.querySelector('.tm[data-k="pospisilova"] img'); img=on; }
+  if(!img || img.closest('header')) return;
+  img.style.viewTransitionName='vt-hero';
+},true);
 document.querySelectorAll('.kurzy').forEach(function(k){
   var n=k.querySelectorAll('.k2 li').length; var b=document.createElement('button'); b.className='k-more'; b.textContent='Zobrazit další kurzy ('+n+')';
   b.onclick=function(){k.classList.add('open')}; k.parentNode.insertBefore(b,k.nextSibling);

@@ -7,6 +7,14 @@ a{color:#1F3F8F}a:hover{color:#C8102E}
 h1,h2,h3{font-family:Fraunces, Georgia, serif;font-weight:400}
 </style>
 <style>
+@view-transition{navigation:auto}
+.ring img{view-transition-name:vt-hero}
+header{view-transition-name:site-hdr}
+.m-cta{view-transition-name:m-cta}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.35s}
+::view-transition-group(vt-hero){animation-duration:.62s;animation-timing-function:cubic-bezier(.2,.8,.2,1)}
+::view-transition-old(vt-hero),::view-transition-new(vt-hero){animation-duration:.62s;height:100%;object-fit:cover}
+@media (prefers-reduced-motion: reduce){@view-transition{navigation:none}}
 h1,h2,h3,blockquote,[style*="Fraunces"]{font-variation-settings:"SOFT" 0,"WONK" 0,"opsz" 72}
 h1,h2,h1 *,h2 *{font-variation-settings:"SOFT" 0,"WONK" 0,"opsz" 96}
 @media (max-width: 760px){
@@ -339,6 +347,24 @@ document.querySelectorAll('.dk-line').forEach(function(line){
   o.addEventListener('click',function(e){if(e.target.closest('a')) set(false)});
   document.addEventListener('keydown',function(e){if(e.key=='Escape') set(false)});
 })();
+
+document.querySelectorAll('.fx').forEach(function(fx){
+  var steps=fx.querySelectorAll('.fx-step');
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ var i=e.target.getAttribute('data-i'); fx.setAttribute('data-a',i); steps.forEach(function(s){s.classList.toggle('on',s===e.target)}); } })},{rootMargin: matchMedia('(max-width: 760px)').matches ? '-76% 0px -23% 0px' : '-45% 0px -45% 0px'});
+  steps.forEach(function(s){io.observe(s)});
+});
+
+document.addEventListener('click',function(e){
+  var a=e.target.closest('a[href]'); if(!a) return; var h=a.getAttribute('href');
+  if(!h||h.charAt(0)=='#'||/^(https?:|tel:|mailto:)/.test(h)||a.target=='_blank') return;
+  document.querySelectorAll('[style*="view-transition-name"]').forEach(function(x){x.style.viewTransitionName=''});
+  document.querySelectorAll('.ring img').forEach(function(x){x.style.viewTransitionName='none'});
+  var img=a.querySelector('img');
+  if(!img){ var p=a.closest('.dk-p'); if(p){ var d=document.querySelector('.dk[data-k="'+p.dataset.k+'"] img'); if(d) img=d; } }
+  if(!img && a.id=='tm-p'){ var on=[].filter.call(document.querySelectorAll('.tm img'),function(i){return i.style.borderColor&&i.style.borderColor.indexOf('200')>-1})[0]||document.querySelector('.tm[data-k="pospisilova"] img'); img=on; }
+  if(!img || img.closest('header')) return;
+  img.style.viewTransitionName='vt-hero';
+},true);
 document.querySelectorAll('.kurzy').forEach(function(k){
   var n=k.querySelectorAll('.k2 li').length; var b=document.createElement('button'); b.className='k-more'; b.textContent='Zobrazit další kurzy ('+n+')';
   b.onclick=function(){k.classList.add('open')}; k.parentNode.insertBefore(b,k.nextSibling);
