@@ -159,6 +159,13 @@ h1,h2,h1 *,h2 *{font-variation-settings:"SOFT" 0,"WONK" 0,"opsz" 96}
   .tl-sec + .car-dots{display:none !important}
   .js-anim .fv li{opacity:.28;transform:translateX(-6px);transition:opacity .5s,transform .5s}
   .js-anim .fv li.lit{opacity:1;transform:none}
+  .car.steps{display:flex !important;flex-direction:column !important;overflow:visible !important;gap:16px !important;padding:4px 0 28px !important;margin:0 !important}
+  .car.steps + .car-dots{display:none !important}
+  .car.steps > div{position:sticky;top:calc(62px + var(--i) * 46px);min-height:232px;flex:none !important;width:100% !important;box-sizing:border-box;background:#FFFFFF;border:1px solid #EFE6D8;border-radius:24px;box-shadow:0 -10px 26px rgba(27,43,75,.09);padding:9px 20px 22px;gap:10px !important}
+  .car.steps > div:nth-child(1){--i:0}.car.steps > div:nth-child(2){--i:1}.car.steps > div:nth-child(3){--i:2}.car.steps > div:nth-child(4){--i:3}.car.steps > div:nth-child(5){--i:4}
+  .car.steps > div > span:first-child{min-height:28px;padding-bottom:8px;border-bottom:1px solid #F1E9DC}
+  .car.steps > div > span:first-child > span[aria-hidden]{width:26px !important;height:26px !important}
+  section:has(> div > .car.steps){background:#FFFFFF}
   .tl-sec{--tab:42px;--h:404px;--t0:58px}
   .tl-sec .tl-row,.tl-sec.car.car > div:last-of-type{position:sticky !important;top:calc(var(--t0) + var(--i) * var(--tab)) !important;height:var(--h) !important;min-height:0 !important;box-sizing:border-box;overflow:hidden !important;background:#FFFFFF !important;border:1px solid #EFE6D8;border-radius:24px !important;box-shadow:0 -10px 26px rgba(27,43,75,.09) !important;padding:0 0 16px !important;margin:0 !important;display:flex !important;flex-direction:column !important;gap:0 !important;align-items:stretch !important;text-align:left !important;width:100% !important;max-width:none !important}
   .tl-sec .tl-row:nth-child(2){--i:0}.tl-sec .tl-row:nth-child(3){--i:1}.tl-sec .tl-row:nth-child(4){--i:2}.tl-sec.car.car > div:last-of-type{--i:3;z-index:5}
